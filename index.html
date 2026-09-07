@@ -1,219 +1,172 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8"> 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Atlan Expedition</title>
-    <!-- FONTS -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap:wght@400..700&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" rel="stylesheet">
-    
-    <style>
-      /* 1. Global Page Layout */
-      body {
-          margin: 0;
-          padding: 0 0 20px 0; 
-          min-height: 100vh;
-          display: flex;
-          flex-direction: column; 
-          align-items: center;
-          box-sizing: border-box;
-          background-color: #f5f5f5;
-      }
+<title>The Atlan Expedition</title>
+<!-- FONTS -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap:wght@400..700&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" rel="stylesheet">
 
-      /* Font Families */
-      h2, h3, .handlee-regular {
-          font-family: "Handlee", cursive;
-          font-weight: 400;
-          font-style: normal;
-          font-size: 2.5rem;
-      }
-      p, figcaption, h4, .handlee-regular {
-          font-family: "Handlee", cursive;
-          font-weight: 400;
-          font-style: normal;
-          font-size: 1.5rem;
-      }
+<style>
+/* 1. Global Page Layout */
+body {
+margin: 0;
+padding: 0 0 20px 0; 
+min-height: 100vh;
+display: flex;
+flex-direction: column; 
+align-items: center;
+box-sizing: border-box;
+background-color: #f5f5f5;
+}
 
-      /* THE STICKY BACKGROUND BANNER HEADER */
-      .header-container {
-          position: sticky;       
-          top: 0;                 
-          z-index: 1000;          
-          
-          width: 100%;            
-          height: 150px;          
-          margin: 0 0 20px 0;     
-          
-          background-image: linear-gradient(rgba(255, 255, 255, 0.52), rgba(255, 255, 255, 0.2)), 
-                            url("https://raw.githubusercontent.com/TheAtlanExpedition/CB500X-Adventures/refs/heads/main/Images/20260704_111639.jpg");
-          background-size: cover;       
-          background-position: center;  
-          
-          display: flex;          
-          align-items: center;    
-          justify-content: center; 
-          box-sizing: border-box;
-      }
+/* Font Families */
+h2, h3, .handlee-regular {
+font-family: "Handlee", cursive;
+font-weight: 400;
+font-style: normal;
+font-size: 2.5rem;
+}
+p, figcaption, h4, .handlee-regular {
+font-family: "Handlee", cursive;
+font-weight: 400;
+font-style: normal;
+font-size: 1.5rem;
+}
 
-      /* Space-between splits the brand layout from the button layout */
-      .flex-container {
-          display: flex;
-          align-items: center; 
-          justify-content: space-between; 
-          width: 100%;
-          max-width: 1900px;              
-          padding: 0 20px;                
-          box-sizing: border-box;
-      }
+/* THE STICKY BACKGROUND BANNER HEADER */
+.header-container {
+position: sticky;       
+top: 0;                 
+z-index: 1000;          
 
-      /* Locks the large icon and the title tightly next to each other */
-      .brand-group {
-          display: flex;
-          align-items: center;
-          gap: 15px;                      
-      }
+width: 100%;            
+height: 150px;          
+margin: 0 0 20px 0;     
 
-      /* Target class for the lightning bolt icon */
-      .brand-icon {
-          font-size: 150px;
-          margin: 0;
-          line-height: 1;
-      }
+background-image: linear-gradient(rgba(255, 255, 255, 0.52), rgba(255, 255, 255, 0.2)), 
+url("https://raw.githubusercontent.com/TheAtlanExpedition/CB500X-Adventures/refs/heads/main/Images/20260704_111639.jpg");
+background-size: cover;       
+background-position: center;  
 
-      /* Inner alignment track for text typography */
-      .header-container h1 {
-          font-family: "Merriweather", serif;
-          margin: 0;
-          font-size: 60px; /* Pixels match the updated bible.html framework */     
-          line-height: .9;       
-          text-align: left;       
-          color: #000000;         
-          box-sizing: border-box;
-          white-space: nowrap; /* Locks text blocks tightly onto 2 lines maximum */
-      }
+display: flex;          
+align-items: center;    
+justify-content: center; /* Centers the inner content container track */
+box-sizing: border-box;
+}
 
-      h4 {
-          font-weight: normal; 
-      }
+/* Space-between splits the brand layout from the button layout */
+.flex-container {
+display: flex;
+align-items: center; 
+justify-content: space-between; /* Pushes brand-group left, button container right */
+width: 100%;
+max-width: 1900px;              /* Prevents items from stretching too far apart on wide monitors */
+padding: 0 20px;                /* Keeps items beautifully away from the glass edges */
+box-sizing: border-box;
+}
 
-      /* Responsive story container */
-      .card {
-          width: 100%;
-          max-width: 800px; 
-          display: block;
-          padding: 0 10px;        
-          box-sizing: border-box;
-      }
+/* Locks the large icon and the title tightly next to each other */
+.brand-group {
+display: flex;
+align-items: center;
+gap: 15px;                      /* Changes space between icon and text */
+}
 
-      /* Forces all story images inside the card to scale responsively */
-      .card img.responsive-img {
-          width: calc(100% + 40px); 
-          max-width: none;
-          margin-left: -20px;       
-          height: auto;
-          display: block;
-          margin-top: 15px;
-      }
+/* Inner alignment track for text typography */
+.header-container h1 {
+font-family: "Merriweather", serif;
+margin: 0;
+font-size: 4rem;              /* Gently adjusted down to stay perfectly on two clean lines */     
+line-height: .9;       
+text-align: left;       
+color: #000000;         
+box-sizing: border-box;
+}
 
-      /* Cleaned Button styling */
-      .transparent-btn {
-          background-color: rgba(137, 81, 41, 0.8); 
-          color: #000000;                     
-          border: 2px solid #000000;     
-          cursor: pointer;              
-          text-align: center;
-          display: flex; 
-          flex-direction: column; 
-          align-items: center; 
-          justify-content: center; 
-          height: 100px; 
-          padding: 0;           
-          width: 80px;             
-      }
+h4 {
+font-weight: normal; 
+}
 
-      .btn-cross {
-          font-size: 55px; 
-          line-height: 1; 
-          margin-top: -5px;
-      }
+/* Responsive story container */
+.card {
+width: 100%;
+max-width: 800px; 
+display: block;
+padding: 0 10px;        
+box-sizing: border-box;
+}
 
-      .btn-menu {
-          font-size: 15px;
-      }
+/* Forces all story images inside the card to scale responsively */
+.card img.responsive-img {
+width: calc(100% + 40px); 
+max-width: none;
+margin-left: -20px;       
+height: auto;
+display: block;
+margin-top: 15px;
+}
 
-      /* GLOBAL WEB RESPONSIVE STEP-DOWN (TRIGGERED AT 650PX SCREEN WIDTH) */
-      @media (max-width: 650px) {
-          .brand-icon {
-              font-size: 80px; /* Safely shrinks lightning bolt icon */
-          }
-          .header-container h1 {
-              font-size: 26px; /* Scales header down to fit screens perfectly */
-          }
-          .transparent-btn {
-              width: 65px;
-              height: 80px;
-          }
-          .btn-cross {
-              font-size: 35px;
-              margin-top: -2px;
-          }
-          .btn-menu {
-              font-size: 11px;
-          }
-      }
-    </style>
+/* Cleaned Button styling */
+.transparent-btn {
+background-color: rgba(137, 81, 41, 0.8); 
+color: #000000;                     
+border: 2px solid #000000;     
+cursor: pointer;              
+text-align: center;
+font-size: 25px;  
+padding: 10px 10px;            
+width: 80px;             
+height: 100px;           
+}
+</style>
 </head>
 <body>
 
-  <div class="header-container">
-    <div class="flex-container">
-      
-      <!-- 1. Left Side Group (Text & Logo remain neatly joined) -->
-      <div class="brand-group">
-        <p class="brand-icon">☈</p>
-        <h1>The Atlan<br>Expedition</h1>
-      </div>
-      
-      <!-- 2. Right Side Group (The button gets automatically cast out to the edge) -->
-      <div style="display: flex; align-items: center;">
-        <a href="bible.html" style="text-decoration: none; color: #000000;">
-          <button class="transparent-btn">
-            <span class="btn-cross">✟</span>
-            <span class="btn-menu">☰☷</span>
-          </button>
-        </a>
-      </div>
-      
-    </div>
-  </div>
+<div class="header-container">
+<div class="flex-container">
 
-  <section style="text-align: center;" class="card">
-    <h2 style="text-decoration: underline;">My Adventures On The CB500X</h2>
-    <h3 style="text-align: left;">My first ride on dirt and with street tyres no less.</h3>
-    <p style="text-align: left;">Blackdown Tablelands, QLD,<br>It starts with sealed roads over cattle grates into open flat fields with cows roaming freely then to the curving road up the mountain, from there it quickly turns into a subtropical scene that seems to only exists on the side of the mountain and in the gully where the rock pool is. Riding up the mountain I came up to a clearing on the side of the road with a nice view over the fields, seemed like the perfect place for a pitstop to enjoy the view.</p>
-    
-    <img src="https://raw.githubusercontent.com/TheAtlanExpedition/CB500X-Adventures/refs/heads/main/Images/20260704_122043.jpg" alt="CB500X on the way up blackdown tablelands." class="responsive-img">
-    <figcaption style="font-size: 15px;">Of course it's a picture of my bike more than the actual view, so go see it for yourself.</figcaption>
+<!-- 1. Left Side Group (Text & Logo remain neatly joined) -->
+<div class="brand-group">
+<p style="font-size: 150px;">☈</p>
+<h1>The Atlan<br>Expedition</h1>
+</div>
 
-    <p style="text-align: left;">At the top of the mountain was an incredible view a short walk from the rest stop just before the road turned to dirt. The view is so unexpected that it can give one a new perspective. Usually when you get a view from the mountain top it never shows the great view of the mountain itself and its place in the land below, you'd need a drone for a view like this.</p>
+<!-- 2. Right Side Group (The button gets automatically cast out to the edge) -->
+<div style="display: flex; align-items: center;">
+<a href="bible.html" style="text-decoration: none; color: #000000;">
+<button class="transparent-btn" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100px; padding: 0;">
+<!-- Pulls the cross upward -->
+<span style="font-size: 55px; line-height: 1; margin-top: -5px;">✟</span>
+<!-- Keeps the menu bars at the bottom -->
+<span style="font-size: 15px; margin-top: px;">☰☷</span>
+</button>
+</a>
+</div>
 
-    <img src="https://raw.githubusercontent.com/TheAtlanExpedition/CB500X-Adventures/refs/heads/main/Images/20260704_111719.jpg" alt="View from top of Blackdown Tablelands." class="responsive-img">
-    <figcaption style="font-size: 15px;">The trees cover the mountain like moss on a stone</figcaption>
+</div>
+</div>
+<section style="text-align: center;" class="card">
+<h2 style="text-decoration: underline;">My Adventures On The CB500X</h2>
+<h3 style="text-align: left;">My first ride on dirt and with street tyres no less.</h3>
+<p style="text-align: left;">Blackdown Tablelands, QLD,<br>It starts with sealed roads over cattle grates into open flat fields with cows roaming freely then to the curving road up the mountain, from there it quickly turns into a subtropical scene that seems to only exists on the side of the mountain and in the gully where the rock pool is. Riding up the mountain I came up to a clearing on the side of the road with a nice view over the fields, seemed like the perfect place for a pitstop to enjoy the view.</p>
+<img src="https://raw.githubusercontent.com/TheAtlanExpedition/CB500X-Adventures/refs/heads/main/Images/20260704_122043.jpg" alt="CB500X on the way up blackdown tablelands." class="responsive-img"><figcaption style="font-size: 15px;">Of course it's a picture of my bike more than the actual view, so go see it for yourself.</figcaption>
 
-    <p style="text-align: left;">Heading off the sealed road for the first time was intimidating to start with but I'd already gotten some good advice online about standing, essentailly "stand when you don't want to and sit when it's easy". The street tyres and pressures didn't help with the corrogation, I was slowing to a crawl around corners to avoid slipping on the gravel and dodging potholes, keep in mind this was before I'd gotten any protection for me or the bike.<br></p>
-  </section>  
+<p style="text-align: left;">At the top of the mountain was an incredible view a short walk from the rest stop just before the road turned to dirt. The view is so unexpected that it can give one a new perspective. Usually when you get a view from the mountain top it never shows the great view of the mountain itself and its place in the land below, you'd need a drone for a view like this.</p>
 
+<img src="https://raw.githubusercontent.com/TheAtlanExpedition/CB500X-Adventures/refs/heads/main/Images/20260704_111719.jpg" alt="View from top of Blackdown Tablelands." class="responsive-img"><figcaption style="font-size: 15px;"">The trees cover the mountain like moss on a stone</figcaption>
+
+<p style="text-align: left;">Heading off the sealed road for the first time was intimidating to start with but I'd already gotten some good advice online about standing, essentailly "stand when you don't want to and sit when it's easy". The street tyres and pressures didn't help with the corrogation, I was slowing to a crawl around corners to avoid slipping on the gravel and dodging potholes, keep in mind this was before I'd gotten any protection for me or the bike.<br></p>
+
+</section>  
+<!-- © &#169; -->
 </body>
 </html>
- <!-- © &#169; -->
-
 
 <!-- https://codesandbox.io/p/sandbox/brave-cohen-rt484s?file=%2Findex.html%3A117%2C311 
-     https://www.freecodecamp.org/learn/responsive-web-design-v9/lab-recipe-page/build-a-recipe-page
-     https://www.toptal.com/designers/htmlarrows/symbols/
-     ☈ &#9736;
-     ☠ &#9760; 
-     ✘ &#10008;-->
+    https://www.freecodecamp.org/learn/responsive-web-design-v9/lab-recipe-page/build-a-recipe-page
+    https://www.toptal.com/designers/htmlarrows/symbols/
+    ☈ &#9736;
+    ☠ &#9760; 
+    ✘ &#10008;-->
