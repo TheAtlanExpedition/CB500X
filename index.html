@@ -118,8 +118,7 @@
           font-size: 25px;  
           padding: 10px 10px;            
           width: 80px;             
-          height: 100px;
-          transform: translateY(38px);            
+          height: 100px;           
       }
     </style>
 </head>
@@ -135,9 +134,16 @@
       </div>
       
       <!-- 2. Right Side Group (The button gets automatically cast out to the edge) -->
-      <div>
-        <button class="transparent-btn"><p style="font-size:50px; line-height: .7; transform: translateY(-38px);">✟</p><p style="transform: translateY(-90px);">☰☷</p></button>
-      </div>
+<div style="display: flex; align-items: center;">
+  <a href="bible.html" style="text-decoration: none; color: #000000;">
+    <button class="transparent-btn" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100px; padding: 0;">
+      <!-- Pulls the cross upward -->
+      <span style="font-size: 55px; line-height: 1; margin-top: -5px;">✟</span>
+      <!-- Keeps the menu bars at the bottom -->
+      <span style="font-size: 15px; margin-top: px;">☰☷</span>
+    </button>
+  </a>
+</div>
       
     </div>
   </div>
