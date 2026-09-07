@@ -83,7 +83,11 @@
           padding: 0 0.5px;        /* Keeps the text from hugging the absolute edges on mobile */
           box-sizing: border-box;
       }
-
+          .flex-container {
+            display: flex;
+            align-items: center; /* Vertically centers the items next to each other */
+            gap: 10px;           /* Adds a nice gap between the heading and paragraph */
+           }
       h4 {
           font-weight: normal; 
       }
@@ -106,20 +110,33 @@
           display: block;
           margin-top: 15px;
       }
-.flex-container {
-  display: flex;
-  align-items: center; /* Vertically centers the items next to each other */
-  gap: 10px;           /* Adds a nice gap between the heading and paragraph */
+
+
+.transparent-btn {
+  background-color: transparent; /* Makes the background clear */       
+  background-color: rgba(137, 81, 41, 0.8); 
+  color: #000000;            /* Sets the text color */         
+  border: 5px solid #895129;     
+  cursor: pointer;              /* Adds a border so the button is visible */
+  text-align: center;
+  font-size: 25px;  
+  padding: 10px 10px;            /* Adds spacing inside the button */
+  cursor: pointer;               /* Changes the mouse cursor on hover */
+    margin-left: 550px;
+    width: 80px;             /* Forces the button to stay exactly this wide */
+    height: 100px;            /* Forces the button to stay exactly this tall */
+    
 }
     </style>
 </head>
 <body>
 
   <div class="header-container">
- <div class="flex-container">
+      <div class="flex-container">
       <p style="font-size: 150px;">&#9736;</p>
-  <h1>The Atlan<br>Expedition</h1>
-</div>
+      <h1>The Atlan<br>Expedition</h1>
+      <button class="transparent-btn">&#10015;<br>&#9776;&#9783;</button>
+      </div>
     </div>
    <section style="text-align: center;" class="card">
     <h2 style="text-decoration: underline;">My Adventures On The CB500X</h2>
