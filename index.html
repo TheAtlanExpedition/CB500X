@@ -1,25 +1,18 @@
 <!DOCTYPE html>
-<!-- https://codesandbox.io/p/sandbox/brave-cohen-rt484s?file=%2Findex.html%3A117%2C311 -->
-<!-- https://www.freecodecamp.org/learn/responsive-web-design-v9/lab-recipe-page/build-a-recipe-page -->
-<!-- https://www.toptal.com/designers/htmlarrows/symbols/ -->
-<!-- &#9736; -->
 <html>
 <head>
     <title>The Atlan Expedition</title>
     <!-- FONTS -->
-    <!-- Headers, Paragraphs and Figcaptions -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
-
     <link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap:wght@400..700&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" rel="stylesheet">
     
-    <!-- CSS Style Rules to apply the font and responsive scaling -->
     <style>
-      /* 1. Global Page Layout — Modified for edge-to-edge header */
+      /* 1. Global Page Layout */
       body {
           margin: 0;
-          padding: 0 0 5px 0; /* Removed side padding so header hits the screen edges */
+          padding: 0 0 5px 0; 
           min-height: 100vh;
           display: flex;
           flex-direction: column; 
@@ -29,65 +22,69 @@
       }
 
       /* Font Families */
-      h2, h3,
-          
-.handlee-regular {
-            font-family: "Handlee", cursive;
-            font-weight: 400;
-            font-style: normal;
-           font-size: 2.5rem;
+      h2, h3, .handlee-regular {
+          font-family: "Handlee", cursive;
+          font-weight: 400;
+          font-style: normal;
+          font-size: 2.5rem;
       }
-      p, figcaption, h4,
-          
-.handlee-regular {
-            font-family: "Handlee", cursive;
-            font-weight: 400;
-            font-style: normal;
-           font-size: 1.5rem;
+      p, figcaption, h4, .handlee-regular {
+          font-family: "Handlee", cursive;
+          font-weight: 400;
+          font-style: normal;
+          font-size: 1.5rem;
       }
 
-
-      /* THE STICKY BACKGROUND BANNER HEADER — NOW FULL WIDTH */
+      /* THE STICKY BACKGROUND BANNER HEADER */
       .header-container {
-          position: sticky;       /* Keeps the entire header locked to the top */
-          top: 0;                 /* Pins it to the very top edge of the window */
-          z-index: 1000;          /* Floating layer weight above story images */
+          position: sticky;       
+          top: 0;                 
+          z-index: 1000;          
           
-          width: 100%;            /* Spans 100% of the screen width */
-          max-width: 100%;        /* Removes the 600px restriction */
-          height: 150px;          /* Sets a fixed height for your banner header */
-          margin: 0 0 20px 0;     /* Clean margin below the banner before story content starts */
+          width: 100%;            
+          height: 150px;          
+          margin: 0 0 20px 0;     
           
-          /* BACKGROUND IMAGE SETTINGS */
           background-image: linear-gradient(rgba(255, 255, 255, 0.52), rgba(255, 255, 255, 0.2)), 
                             url("https://raw.githubusercontent.com/TheAtlanExpedition/CB500X-Adventures/refs/heads/main/Images/20260704_111639.jpg");
-          background-size: cover;       /* Stretches the image to fill the banner box */
-          background-position: center;  /* Centers the image within the banner box */
+          background-size: cover;       
+          background-position: center;  
           
           display: flex;          
-          align-items: center;    /* Vertically centers the text inside the banner */
-          justify-content: Left; /* Centers the inner content track */
+          align-items: center;    
+          justify-content: center; /* Centers the inner content container track */
           box-sizing: border-box;
       }
 
-      /* Inner alignment track to keep text aligned with the story below */
+      /* Space-between splits the brand layout from the button layout */
+      .flex-container {
+          display: flex;
+          align-items: center; 
+          justify-content: space-between; /* Pushes brand-group left, button container right */
+          width: 100%;
+          max-width: 1200px;              /* Prevents items from stretching too far apart on wide monitors */
+          padding: 0 30px;                /* Keeps items beautifully away from the glass edges */
+          box-sizing: border-box;
+      }
+
+      /* Locks the large icon and the title tightly next to each other */
+      .brand-group {
+          display: flex;
+          align-items: center;
+          gap: 15px;                      /* Changes space between icon and text */
+      }
+
+      /* Inner alignment track for text typography */
       .header-container h1 {
           font-family: "Merriweather", serif;
           margin: 0;
-          font-size: 3.5rem;      
-          line-height: 1.2;       
+          font-size: 2.2rem;              /* Gently adjusted down to stay perfectly on two clean lines */     
+          line-height: 1.1;       
           text-align: left;       
           color: #000000;         
-          width: 100%;
-          max-width: 600px;       /* Matches your card width so text lines up perfectly */
-          padding: 0 0.5px;        /* Keeps the text from hugging the absolute edges on mobile */
           box-sizing: border-box;
       }
-          .flex-container {
-            display: flex;
-            align-items: center; /* Vertically centers the items next to each other */
-            gap: 10px;           /* Adds a nice gap between the heading and paragraph */
-           }
+
       h4 {
           font-weight: normal; 
       }
@@ -97,47 +94,52 @@
           width: 100%;
           max-width: 800px; 
           display: block;
-          padding: 0 5px;        /* Adds back side padding so text doesn't touch phone screen borders */
+          padding: 0 5px;        
           box-sizing: border-box;
       }
 
       /* Forces all story images inside the card to scale responsively */
       .card img.responsive-img {
-          width: calc(100% + 40px); /* Expands past the parent padding */
+          width: calc(100% + 40px); 
           max-width: none;
-          margin-left: -20px;       /* Pulls the image left to align with the screen edge */
+          margin-left: -20px;       
           height: auto;
           display: block;
           margin-top: 15px;
       }
 
-
-.transparent-btn {
-  background-color: transparent; /* Makes the background clear */       
-  background-color: rgba(137, 81, 41, 0.8); 
-  color: #000000;            /* Sets the text color */         
-  border: 5px solid #895129;     
-  cursor: pointer;              /* Adds a border so the button is visible */
-  text-align: center;
-  font-size: 25px;  
-  padding: 10px 10px;            /* Adds spacing inside the button */
-  cursor: pointer;               /* Changes the mouse cursor on hover */
-    margin-left: 550px;
-    width: 80px;             /* Forces the button to stay exactly this wide */
-    height: 100px;            /* Forces the button to stay exactly this tall */
-    
-}
+      /* Cleaned Button styling */
+      .transparent-btn {
+          background-color: rgba(137, 81, 41, 0.8); 
+          color: #000000;                     
+          border: 2px solid #000000;     
+          cursor: pointer;              
+          text-align: center;
+          font-size: 25px;  
+          padding: 10px 10px;            
+          width: 80px;             
+          height: 100px;            
+      }
     </style>
 </head>
 <body>
 
   <div class="header-container">
-      <div class="flex-container">
-      <p style="font-size: 150px;">&#9736;</p>
-      <h1>The Atlan<br>Expedition</h1>
-      <button class="transparent-btn">&#10015;<br>&#9776;&#9783;</button>
+    <div class="flex-container">
+      
+      <!-- 1. Left Side Group (Text & Logo remain neatly joined) -->
+      <div class="brand-group">
+        <p style="font-size: 150px; margin: 0; line-height: 1;">☈</p>
+        <h1>The Atlan<br>Expedition</h1>
       </div>
+      
+      <!-- 2. Right Side Group (The button gets automatically cast out to the edge) -->
+      <div>
+        <button class="transparent-btn">✟<br>☰☷</button>
+      </div>
+      
     </div>
+  </div>
    <section style="text-align: center;" class="card">
     <h2 style="text-decoration: underline;">My Adventures On The CB500X</h2>
     <h3 style="text-align: left;">My first ride on dirt and with street tyres no less.</h3>
@@ -154,3 +156,8 @@
  <!-- &#169; -->
 </body>
 </html>
+
+<!-- https://codesandbox.io/p/sandbox/brave-cohen-rt484s?file=%2Findex.html%3A117%2C311 -->
+<!-- https://www.freecodecamp.org/learn/responsive-web-design-v9/lab-recipe-page/build-a-recipe-page -->
+<!-- https://www.toptal.com/designers/htmlarrows/symbols/ -->
+<!-- &#9736; -->
