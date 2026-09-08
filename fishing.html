@@ -16,7 +16,23 @@
     /* Space-between splits the brand layout from the button layout - Pushes brand-group left, button container right - Prevents items from stretching too far apart on wide monitors -  Keeps items away from the glass edges */
     .flex-container { display: flex; align-items: center; justify-content: space-between; width: 100%; max-width: 1900px; padding: 0 20px; box-sizing: border-box; }
     /* Locks the large icon and the title tightly next to each other */
-    .brand-group { display: flex; align-items: center; gap: 1px; }
+  .brand-group {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  position: relative; /* CRITICAL: Allows absolute positioning inside it */
+}
+/* 2. Position the buttons exactly where you want them relative to the logo */
+.nav-buttons-anchored {
+  position: absolute;
+  
+  /* Vertical Position: */
+  bottom: -20px;       /* Pushes buttons 60px below the bottom edge of the logo */
+  
+  /* Horizontal Position (Pick ONE of the options below): */
+  left: 30px;             /* Option A: Lines up with the left edge of the ☈ symbol */
+  white-space: nowrap; /* Prevents buttons from stacking onto new lines */
+}
     /* Inner alignment track for text typography */
     .header-container h1 { font-family: "Merriweather", serif; margin: 0; font-size: 4rem; line-height: .9; text-align: left; color: #000000; box-sizing: border-box; }
     h4 { font-weight: normal; }
@@ -31,33 +47,29 @@
  <!--  ✟   -->
 <body>
   <div class="header-container">
-    <div class="flex-container">
-    <!-- 1. Left Side Group (Text & Logo remain neatly joined) &#9781; ☵  &#x1F3A3;-->
+  <div class="flex-container">
+    <!-- 1. Left Side Group -->
     <div class="brand-group">
       <p style="font-size: 135px;">&#x1F3A3;</p>
-      <h1  style="font-size: 65px; transform: translate(20px, 0px);">Fishing<br>Adventures</h1>
+      <h1 style="font-size: 65px; transform: translate(20px, 0px);">Fishing<br>Adventures</h1>
     </div>
-        <!-- Bottom button bar -->
-    <div>
-      <section style="transform: translate(-200px, 84px);text-decoration: none; color: #000000;">
-         <a href="index.html"><button>Home</button></a>
+    <!-- 2. Middle Button Bar -->
+      <div class="nav-buttons-anchored">
+        <a href="index.html"><button>Home</button></a>
         <a href="camping.html"><button>Camping</button></a>
         <a href="fishing.html"><button>Fishing</button></a>
-      </section>
-    </div>      
-    <!-- 2. Right Side Group (The button gets automatically cast out to the edge) -->
-    <div style="display: flex; align-items: center;">
+      </div>  
+    <!-- 3. Right Side Group -->
+    <div class="right-menu">
       <a href="bible.html" style="text-decoration: none; color: #000000;">
-      <button class="transparent-btn" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100px; padding: 0;">
-      <!-- Pulls the cross upward -->
-      <span style="font-size: 55px; line-height: 1; margin-top: -5px;">✟</span>
-      <!-- Keeps the menu bars at the bottom -->
-      <span style="font-size: 15px; margin-top: px;">☰☷</span>
-      </button>
+        <button class="transparent-btn">
+          <span style="font-size: 55px; line-height: 1; margin-top: -5px;">✟</span>
+          <span style="font-size: 15px;">☰☷</span>
+        </button>
       </a>
-      </div>
     </div>
   </div>
+</div>
        <p style="font-size:100px; text-align:center">COMING SOON<br>W.I.P</p>
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>✟
 </body>
