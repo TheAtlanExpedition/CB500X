@@ -1,1 +1,2 @@
-Buttons on bottom bar are moving across the pages.
+Buttons on bottom bar are moving across the pages. (SOLVED)
+Replace middle buttons with better looking buttons
