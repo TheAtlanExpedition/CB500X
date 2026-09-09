@@ -49,22 +49,6 @@ p, figcaption, h4, .handlee-regular {
   justify-content: center; 
   box-sizing: border-box; } 
 
-/* Space-between splits the brand layout from the button layout - Pushes brand-group left, button container right - Prevents items from stretching too far apart on wide monitors -  Keeps items away from the glass edges */
-.flex-container { 
-  display: flex; 
-  align-items: center; 
-  justify-content: space-between;
-  width: 100%; 
-  max-width: 1900px; 
-  padding: 0 20px; 
-  box-sizing: border-box; } 
-
-/* Locks the large icon and the title tightly next to each other */
-.brand-group { 
-  display: flex; 
-  align-items: center; 
-  gap: 1px; } 
-
 /* Inner alignment track for text typography */
 .header-container h1 { 
   font-family: "Merriweather", serif; 
@@ -77,6 +61,23 @@ p, figcaption, h4, .handlee-regular {
 
 .h4 { 
   font-weight: normal; }
+
+.flex-container { 
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between;
+  width: 100%; 
+  max-width: 1900px; 
+  padding: 0 20px; 
+  box-sizing: border-box; } 
+
+/* Cleaned Button styling */
+/* 1. The anchor point for the buttons */ 
+.brand-group { 
+  display: flex; 
+  align-items: center; 
+  gap: 15px; 
+  position: relative; }
 
 /* Responsive story container */
 .card { 
@@ -95,20 +96,17 @@ p, figcaption, h4, .handlee-regular {
   display: block; 
   margin-top: 15px; }
 
-/* Cleaned Button styling */
-/* 1. The anchor point for the buttons */ 
-.brand-group { 
-  display: flex; 
-  align-items: center; 
-  gap: 15px; 
-  position: relative; }
-
 /* Nav Buttons */
 /* 2. middle buttons */
 .nav-buttons-anchored { 
   position: absolute; 
-  bottom: -61px; left: 430px; 
-  white-space: nowrap; } 
+  bottom: -61px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 15px;
+  white-space: nowrap;} 
+
 .nav-btn-home {
   background-image: url('https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/20260704_111639.jpg');  
   background-size: cover;
