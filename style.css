@@ -1,0 +1,90 @@
+<style>
+      /* 1. Global Page Layout */
+      body { margin: 0; padding: 0 0 20px 0; min-height: 100vh; display: flex; flex-direction: column; align-items: center; box-sizing: border-box; background-color: #f5f5f5; }
+
+      /* Font Families */
+      h2, h3, .handlee-regular { font-family: "Handlee", cursive; font-weight: 400; font-style: normal; font-size: 2.5rem; }
+      p, figcaption, h4, .handlee-regular { font-family: "Handlee", cursive; font-weight: 400; font-style: normal; font-size: 1.5rem; }
+
+      /* Space-between splits the brand layout from the button layout - Pushes brand-group left, button container right - Prevents items from stretching too far apart on wide monitors -  Keeps items away from the glass edges */
+      .flex-container { display: flex; align-items: center; justify-content: space-between; width: 100%; max-width: 1900px; padding: 0 20px; box-sizing: border-box; } 
+      /* Locks the large icon and the title tightly next to each other */
+      .brand-group { display: flex; align-items: center; gap: 1px; } 
+      /* Inner alignment track for text typography */
+      .header-container h1 { font-family: "Merriweather", serif; margin: 0; font-size: 4rem; line-height: .9; text-align: left; color: #000000; box-sizing: border-box; } h4 { font-weight: normal; }
+      /* Responsive story container */
+      .card { width: 100%; max-width: 800px; display: block; padding: 0 20px; box-sizing: border-box; }
+      /* Forces all story images inside the card to scale responsively */
+      .card img.responsive-img { width: calc(100% + 40px); max-width: none; margin-left: -20px; height: auto; display: block; margin-top: 15px; }
+      /* Cleaned Button styling */
+      /* 1. The anchor point for the buttons */ .brand-group { display: flex; align-items: center; gap: 15px; position: relative; }
+      /* 2. Position the buttons relative to the logo */ .nav-buttons-anchored { position: absolute; bottom: -61px; left: 30px; white-space: nowrap; } 
+  .nav-btn-home {
+  /* Set the background image */
+  background-image: url('https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/20260704_111639.jpg');  
+  /* Ensure the image covers the button nicely */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; 
+  /* Style the text over the image */
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8); /* Makes text easier to read */
+  /* Size and shape of the button */
+  width: 200px;
+  height: 60px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;}
+  /* Optional: Slight dimming effect when hovering */
+  .img-button:hover {
+  opacity: 0.9;}
+  .nav-btn-home:hover {  transform: scale(1.15); }
+        
+  .nav-btn-camping {
+  /* Set the background image */
+  background-image: url('https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/tent-at-mountain-landscape-at-sunset-generative-ai-photo.jpg');  
+  /* Ensure the image covers the button nicely */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; 
+  /* Style the text over the image */
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8); /* Makes text easier to read */
+  /* Size and shape of the button */
+  width: 200px;
+  height: 60px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;}
+  /* Optional: Slight dimming effect when hovering */
+  .img-button:hover {
+  opacity: 0.9;}
+  .nav-btn-camping:hover {  transform: scale(1.15); }
+
+  .nav-btn-fishing {
+  /* Set the background image */
+  background-image: url('https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/360_F_723911075_5cpkteKfZw6iVbQNGh294w0EoOCyPMu0.jpg');  
+  /* Ensure the image covers the button nicely */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; 
+  /* Style the text over the image */
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8); /* Makes text easier to read */
+  /* Size and shape of the button */
+  width: 200px;
+  height: 60px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;}
+  /* Optional: Slight dimming effect when hovering */
+  .img-button:hover {
+  opacity: 0.9;}
+  .nav-btn-fishing:hover {  transform: scale(1.15); }
+</style>
