@@ -30,9 +30,8 @@
       /* 1. The anchor point for the buttons */ .brand-group { display: flex; align-items: center; gap: 15px; position: relative; /* CRITICAL: Allows absolute positioning inside it */ }
       /* 2. Position the buttons relative to the logo */ .nav-buttons-anchored { position: absolute; /* Vertical Position: */ bottom: -21px; /* Horizontal Position */ left: 30px; white-space: nowrap; /* Prevents buttons from stacking onto new lines */ } .nav-btn:hover { transform: scale(1.15); }
       /*3. Rightside group */
-      .transparent-btn { background-color: rgba(137, 81, 41, 0.8); color: #000000; border: 2px solid #000000; cursor: pointer; text-align: center; font-size: 25px; padding: 10px 10px; width: 80px; height: 100px; }
-      /* Increases the button size by 15% on hover */ 
-      .transparent-btn:hover { transform: scale(1.15); }      
+      .bible-btn { background-color: rgba(137, 81, 41, 0.8); color: #000000; border: 2px solid #000000; cursor: pointer; text-align: center; font-size: 25px; padding: 10px 10px; width: 80px; height: 100px; }
+      .bible-btn:hover { transform: scale(1.15); }      
 </style>
 </head>
  <!--  ✟  ☷ -->
@@ -55,7 +54,7 @@
     <!-- 3. Right Side Group -->
     <div class="right-menu">
       <a href="bible.html" style="text-decoration: none; color: #000000;">
-        <button class="transparent-btn">
+        <button class="bible-btn">
           <span style="font-size: 55px; line-height: 1; margin-top: -5px;">✟</span>
           <span style="font-size: 15px;">☰☷</span>
         </button>
