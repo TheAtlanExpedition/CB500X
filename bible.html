@@ -30,6 +30,7 @@
       /* 1. The anchor point for the buttons */ .brand-group { display: flex; align-items: center; gap: 15px; position: relative; }
       /* 2. Position the buttons relative to the logo */ .nav-buttons-anchored { position: absolute; bottom: -61px; left: 30px; white-space: nowrap; } 
       
+      
       .nav-btn-home {
   /* Set the background image */
   background-image: url('https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/20260704_111639.jpg');  
@@ -47,7 +48,9 @@
   height: 60px;
   border: none;
   border-radius: 8px;
-  cursor: pointer;}
+  cursor: pointer;
+  /* Smooth hover transition */
+  transition: transform 0.2s ease;}
 /* Optional: Slight dimming effect when hovering */
 .img-button:hover {
   opacity: 0.9;}
@@ -70,10 +73,13 @@
   height: 60px;
   border: none;
   border-radius: 8px;
-  cursor: pointer;}
+  cursor: pointer;
+  /* Smooth hover transition */
+  transition: transform 0.2s ease;}
 /* Optional: Slight dimming effect when hovering */
 .img-button:hover {
-  opacity: 0.9;}
+  opacity: 0.9;
+  }
   .nav-btn-camping:hover {  transform: scale(1.15); }
 
         .nav-btn-fishing {
@@ -93,10 +99,13 @@
   height: 60px;
   border: none;
   border-radius: 8px;
-  cursor: pointer;}
+  cursor: pointer;
+  /* Smooth hover transition */
+  transition: transform 0.2s ease;}
 /* Optional: Slight dimming effect when hovering */
 .img-button:hover {
   opacity: 0.9;}
+  
   .nav-btn-fishing:hover {  transform: scale(1.15); }
 
 
@@ -104,12 +113,12 @@
       .bible-btn { background-color: rgba(137, 81, 41, 0.8); color: #000000; border: 2px solid #000000; cursor: pointer; text-align: center; font-size: 25px; padding: 10px 10px; width: 80px; height: 100px; }
       .bible-btn:hover { transform: scale(1.15); }      
       .church-btn { border: 5px solid #000000; cursor: pointer; position:absolute; top:-70px; right:-250px;}
-      .church-btn:hover { transform: scale(1.15); }  
+      .church-btn:hover { transform: scale(1.15); transition: transform 0.2s ease;} }  
 </style>
 </head>
  <!--  ✟   -->
 <body>
-  <div class="header-container">
+<div class="header-container">
   <div class="flex-container">
     <!-- 1. Left Side Group -->
     <div class="brand-group">
@@ -117,23 +126,15 @@
     <h1 style="transform: translate(21.5px, 0px);">Bible<br>Expedition</h1>
     </div>
     <!-- 2. Middle Button Bar -->
-      <div class="nav-buttons-anchored">
-        <a href="index.html"><button style="cursor: pointer;"class="nav-btn-home">Home</button></a>
-        <a href="camping.html"><button style="cursor: pointer;"class="nav-btn-camping">Camping</button></a>
-        <a href="fishing.html"><button style="cursor: pointer;"class="nav-btn-fishing">Fishing</button></a> 
-      </div>  
-      <div class="right-menu">    
-        <a href="https://www.seelifebaptistchurch.org.au/"><button class="church-btn" style="scale:30%;"><img src="https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/logo.png" ></button></a>
-      </div>
+    <div class="nav-buttons-anchored">
+      <a href="index.html"><button style="cursor: pointer;"class="nav-btn-home">Home</button></a>
+      <a href="camping.html"><button style="cursor: pointer;"class="nav-btn-camping">Camping</button></a>
+      <a href="fishing.html"><button style="cursor: pointer;"class="nav-btn-fishing">Fishing</button></a> 
+    </div>  
     <!-- 3. Right Side Group -->
-    <!--<div class="right-menu">
-      <a href="bible.html" style="text-decoration: none; color: #000000;">
-        <button class="bible-btn">
-          <span style="font-size: 55px; line-height: 1; margin-top: -5px;">✟</span>
-          <span style="font-size: 15px;">☰☷</span>
-        </button>
-      </a>
-    </div>-->
+    <div class="right-menu">    
+      <a href="https://www.seelifebaptistchurch.org.au/"><button class="church-btn" style="scale:30%;"><img src="https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/logo.png" ></button></a>
+    </div>
   </div>
 </div>
 
