@@ -1,239 +1,41 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Bible Expedition</title>
-      <!-- FONTS -->
-      <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap:wght@400..700&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" rel="stylesheet">
-  <style>
-/* 1. Global Page Layout */
-body { 
-  margin: 0; 
-  padding: 0 0 20px 0; 
-  min-height: 100vh; 
-  display: flex; 
-  flex-direction: column; 
-  align-items: center; 
-  box-sizing: border-box; 
-  background-color: #f5f5f5; }
-
-/* Font Families */
-h2, h3, .handlee-regular { 
-  font-family: "Handlee", cursive; 
-  font-weight: 400; 
-  font-style: normal; 
-  font-size: 2.5rem; }
-p, figcaption, h4, .handlee-regular { 
-  font-family: "Handlee", cursive; 
-  font-weight: 400; 
-  font-style: normal; 
-  font-size: 1.5rem; }
-
-/* THE STICKY BACKGROUND BANNER HEADER - Centers the inner content container track  */
-.header-container { 
-  position: sticky; 
-  top: 0; 
-  z-index: 1000; 
-  width: 100%; height: 100px; 
-  margin: 0 0 100px 0; 
-  background-image: linear-gradient(rgba(255, 255, 255, 0.52), rgba(255, 255, 255, 0.2)), url("https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/the-holy-bible-with-sun-beam-website-header.jpg");
-  background-size: cover; 
-  background-position: center; 
-  display: flex; 
-  align-items: center; 
-  justify-content: center; 
-  box-sizing: border-box; } 
-
-.flex-container { 
-  display: flex; 
-  align-items: center; 
-  justify-content: space-between;
-  width: 100%; 
-  max-width: 1900px; 
-  padding: 0 20px; 
-  box-sizing: border-box; } 
-
-/* Cleaned Button styling */
-/* 1. The anchor point for the buttons */ 
-.brand-group { 
-  display: flex; 
-  align-items: center; 
-  gap: 15px; 
-  position: relative; }
- 
-  /* Inner alignment track for text typography */
-.header-container h1 { 
-  font-family: "Merriweather", serif; 
-  translate: 0px 0px;
-  font-size: 2.8rem; 
-  line-height: .9; 
-  text-align: left; 
-  color: #000000; 
-  box-sizing: border-box; } 
-.header-container p { 
-  font-family: "Merriweather", serif; 
-  translate: 0px -6.5px;
-  font-size: 6.6rem; 
-  text-align: left; 
-  color: #000000; 
-  box-sizing: border-box; } 
-
-.h4 { 
-  font-weight: normal; }
-
-/* Responsive story container */
-.card { 
-  width: 100%; 
-  max-width: 800px; 
-  display: block; 
-  padding: 0 20px; 
-  box-sizing: border-box; }
-
-/* Forces all story images inside the card to scale responsively */
-.card img.responsive-img { 
-  width: calc(100% + 40px); 
-  max-width: none; 
-  margin-left: -20px; 
-  height: auto; 
-  display: block; 
-  margin-top: 15px; }
-
-/* Nav Buttons */
-/* 2. middle buttons */
-.nav-buttons-anchored { 
-  position: absolute; 
-  bottom: -61px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 11px;
-  white-space: nowrap;} 
- .nav-buttons-anchored{  
-  bottom: -56px;
-  width: 110%; height: 57px; 
-  background-image:url("https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/20180610_144339_1F39E90D-0541-4893-8704-A8CA6835F2B8.jpg");
-  background-size: cover;
-  border: 5px solid #000000; 
-  background-position: center; 
-  display: flex; 
-  align-items: center; 
-  justify-content: center; 
-  box-sizing: border-box; }
-
-.nav-btn-home {
-  background-image: url('https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/20260704_111639.jpg');  
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat; 
-  color: white;
-  font-weight: bold;
-  font-size: 16px;
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
-  width: 150px;
-  height: 30px;
-  box-sizing: border-box; 
-  padding-bottom: 40px;   
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: transform 0.2s ease;}
-.nav-btn-home:hover {
-  opacity: 0.9;
-  transform: scale(1.15);}
-  
-.nav-btn-camping {
-  background-image: url('https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/tent-at-mountain-landscape-at-sunset-generative-ai-photo.jpg');  
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat; 
-  color: white;
-  font-weight: bold;
-  font-size: 16px;
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
-  width: 150px;
-  height: 30px;
-  box-sizing: border-box; 
-  padding-bottom: 40px;   
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: transform 0.2s ease;}
-.nav-btn-camping:hover {
-  opacity: 0.9;
-  transform: scale(1.15);}
-
-.nav-btn-fishing {
-  background-image: url('https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/360_F_723911075_5cpkteKfZw6iVbQNGh294w0EoOCyPMu0.jpg');  
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat; 
-  color: white;
-  font-weight: bold;
-  font-size: 16px;
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
-  width: 150px;
-  height: 30px;
-  box-sizing: border-box; 
-  padding-bottom: 40px;   
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: transform 0.2s ease;}
-.nav-btn-fishing:hover {
-  opacity: 0.9;
-  transform: scale(1.15);}
-
-
-/*3. Rightside group */
-.church-btn {
-  background-image: url('https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/logo.png');  
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat; 
-  color: white;
-  font-weight: bold;
-  font-size: 16px;
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
-  width: 150px;
-  height: 50px;
-  box-sizing: border-box; 
-  padding-bottom: 40px;   
-  border: none;
-  border: 2px solid #000000; 
-  border-radius: 8px;
-  cursor: pointer;
-  transition: transform 0.2s ease;}
-.church-btn:hover {
-  opacity: 0.9;
-  transform: scale(1.15);}
-</style>
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
+    <link href="https://googleapis.com/css2?family=Handlee&display=swap:wght@400..700&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" rel="stylesheet">
+    
+    <!-- EXTERNAL STYLESHEET -->
+    <link rel="stylesheet" href="styles.css">
 </head>
- <!--  ✟   -->
 <body>
-<div class="header-container">
-  <div class="flex-container">
-    <!-- 1. Left Side Group -->
-    <div class="brand-group">
-      <p style="transform: translate(15px, 0px);">&#10014;</p>
-    <h1 style="transform: translate(10.5px, 0px);">Bible<br>Expedition</h1>
-    </div>
-    <!-- 2. Middle Button Bar -->
-      <div class="nav-buttons-anchored">
-        <a href="index.html"><button style="cursor: pointer; font-size:30px;"class="nav-btn-home">Home</button></a>
-        <a href="camping.html"><button style="cursor: pointer; font-size:30px;"class="nav-btn-camping">Camping</button></a>
-        <a href="fishing.html"><button style="cursor: pointer; font-size:30px;"class="nav-btn-fishing">Fishing</button></a>
-      </div>  
-    <!-- 3. Right Side Group -->
-    <div class="right-menu">    
-      <a href="https://www.seelifebaptistchurch.org.au/"><button class="church-btn"></button></a>
+  <div class="header-container bible-page">
+    <div class="flex-container">
+      <!-- 1. Left Side Group -->
+      <div class="brand-group">
+        <p>✟</p>
+        <h1 >Bible<br>Expedition</h1>
+      </div>
+      <!-- 2. Middle Button Bar -->
+      <section style="font-size:20px;">
+        <div class="nav-buttons-anchored">
+          <a href="index.html"><button style="cursor: pointer; font-size:30px;" class="nav-btn-home">Home</button></a>
+          <a href="camping.html"><button style="cursor: pointer; font-size:30px;" class="nav-btn-camping">Camping</button></a>
+          <a href="fishing.html"><button style="cursor: pointer; font-size:30px;" class="nav-btn-fishing">Fishing</button></a>
+        </div>  
+      </section>    
+      <!-- 3. Right Side Group (Uses Church Button) -->
+      <div class="right-menu">
+        <a href="church.html"><button style="cursor: pointer;" class="church-btn"></button></a>
+      </div>
     </div>
   </div>
-</div>
 
-  <div style="text-align:center;"">  
-    <h3>1 Corinthians 10:31<h3><p style="margin:-50px;">"Whether therefore ye eat, or drink, or whatsoever ye do, do all to the glory of God."</p>
-    <p style="font-size:100px;">COMING SOON<br>W.I.P
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>&#10014;</p>
+  <div class="card">
+     <!-- Text/Media content for the Bible page goes here -->
   </div>
 </body>
 </html>
