@@ -124,8 +124,8 @@ h1 {
   transform: translateX(-50%);
   /* Layout Sizing & Padding Structure */
   width: 90%; 
-  max-width: 490px;
-  height: 55px; 
+  max-width: 480px;
+  height: 50px; 
   padding-bottom: 45px;           
   padding: 0 30px;  
   box-sizing: border-box; 
@@ -133,7 +133,7 @@ h1 {
   display: flex; 
   align-items: center; 
   justify-content: center; 
-  gap: 11px;
+  gap: 8px;
   white-space: nowrap;
   /* Card Matching Styling Traits */
   background-color: #000000;
