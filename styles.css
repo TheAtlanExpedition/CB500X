@@ -1,146 +1,171 @@
 /* ==========================================================================
    1. Global Page Layout
    ========================================================================== */
-body { 
-  margin: 0; 
-  padding: 0 0 20px 0; 
-  min-height: 100vh; 
-  display: flex; 
-  flex-direction: column; 
-  align-items: center; 
-  box-sizing: border-box; 
-  background-color: #f5f5f5; 
+body {
+  margin: 0;
+  padding: 0 0 20px 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  background-color: #f5f5f5;
 }
 
 /* Font Families */
-h2, h3, .handlee-regular { 
-  font-family: "Handlee", cursive; 
-  font-weight: 400; 
-  font-style: normal; 
-  font-size: 2.5rem; 
+h2,
+h3,
+.handlee-regular {
+  font-family: "Handlee", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2.5rem;
 }
-p, figcaption, h4, .handlee-regular { 
-  font-family: "Handlee", cursive; 
-  font-weight: 400; 
-  font-style: normal; 
-  font-size: 1.5rem; 
+p,
+figcaption,
+h4,
+.handlee-regular {
+  font-family: "Handlee", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.5rem;
 }
-h1 { 
-  font-family: "Merriweather", serif; 
+h1 {
+  font-family: "Merriweather", serif;
   translate: 0px 0px;
-  font-size: 2.8rem; 
-  line-height: .9; 
-  text-align: left; 
-  color: #000000; 
-  box-sizing: border-box; 
-} 
+  font-size: 2.8rem;
+  line-height: 0.9;
+  text-align: left;
+  color: #000000;
+  box-sizing: border-box;
+}
 
 /* ==========================================================================
-   2. Header Base Structure
-   ========================================================================== */
-.header-container {   
-  position: sticky; 
-  top: 0; 
-  z-index: 1000; 
-  width: 100%; height: 100px; 
-  margin: 0 0 100px 0; 
-  background-size: cover; 
-  background-position: center; 
-  display: flex; 
-  align-items: center; 
-  justify-content: center; 
-  box-sizing: border-box; 
-} 
+     2. Header Base Structure
+     ========================================================================== */
+.header-container {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 100px;
+  margin: 0 0 100px 0;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
 .header-container::after {
   content: "";
   display: block;
   position: absolute;
   left: 0;
   width: 100%;
-  height: 8px;                  
-  background-color: #000000;    
-  margin-top: 105px;             
+  height: 8px;
+  background-color: #000000;
+  margin-top: 105px;
 }
 
 /* PAGE SPECIFIC HEADER BACKGROUND IMAGES */
 .header-container.index-h-page {
-  background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url("https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/20260704_111639.jpg");}
-.header-container.camping-h-page {
-  background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url("https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/image_ca4cc3a2.jpg");}
-.header-container.fishing-h-page {
-  background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url("https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/20170120_161301_IMG_0992.jpg");}
-.header-container.bible-h-page {
-  background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url("https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/the-holy-bible-with-sun-beam-website-header.jpg");}
-
-
-.flex-container { 
-  display: flex; 
-  align-items: center; 
-  justify-content: space-between;
-  width: 100%; 
-  max-width: 1900px; 
-  padding: 0 20px; 
-  box-sizing: border-box; 
-} 
-
-.brand-group { 
-  display: flex; 
-  align-items: center; 
-  gap: 15px; 
-  position: relative; 
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.2),
+      rgba(255, 255, 255, 0.2)
+    ),
+    url("https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/20260704_111639.jpg");
 }
- 
-.header-container h1 { 
-  font-family: "Merriweather", serif; 
-  translate: 0px 0px;
-  font-size: 2.8rem; 
-  line-height: .9; 
-  text-align: left; 
-  color: #000000; 
-  box-sizing: border-box; 
-} 
-.header-container p { 
-  font-family: "Merriweather", serif; 
-  translate: 0px -6.5px;
-  font-size: 6.6rem; 
-  text-align: left; 
-  color: #000000; 
-  box-sizing: border-box; 
-} 
+.header-container.camping-h-page {
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.2),
+      rgba(255, 255, 255, 0.2)
+    ),
+    url("https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/image_ca4cc3a2.jpg");
+}
+.header-container.fishing-h-page {
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.2),
+      rgba(255, 255, 255, 0.2)
+    ),
+    url("https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/20170120_161301_IMG_0992.jpg");
+}
+.header-container.bible-h-page {
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.2),
+      rgba(255, 255, 255, 0.2)
+    ),
+    url("https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/the-holy-bible-with-sun-beam-website-header.jpg");
+}
 
-.h4 { 
-  font-weight: normal; 
+.flex-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1900px;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.brand-group {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  position: relative;
+}
+
+.header-container h1 {
+  font-family: "Merriweather", serif;
+  translate: 0px 0px;
+  font-size: 2.8rem;
+  line-height: 0.9;
+  text-align: left;
+  color: #000000;
+  box-sizing: border-box;
+}
+.header-container p {
+  font-family: "Merriweather", serif;
+  translate: 0px -6.5px;
+  font-size: 6.6rem;
+  text-align: left;
+  color: #000000;
+  box-sizing: border-box;
+}
+
+.h4 {
+  font-weight: normal;
 }
 
 /* ==========================================================================
-   3. Navigation Track & Buttons
-   ========================================================================== */
+     3. Navigation Track & Buttons
+     ========================================================================== */
 
 /* Centered Navigation Bar Panel with White Glass Background */
-.nav-buttons-anchored { 
-  position: absolute; 
-  bottom: -60px;              
+.nav-buttons-anchored {
+  position: absolute;
+  bottom: -55px;
   left: 50%;
   transform: translateX(-50%);
   /* Layout Sizing & Padding Structure */
-  width: 90%; 
-  max-width: 480px;
-  height: 50px; 
-  padding-bottom: 45px;           
-  padding: 0 30px;  
-  box-sizing: border-box; 
+  width: 90%;
+  max-width: 472px;
+  height: 50px;
+  padding-bottom: 34px;
+  padding: 0 30px;
+  box-sizing: border-box;
   /* Flexbox Settings to Line Up and Center Buttons */
-  display: flex; 
-  align-items: center; 
-  justify-content: center; 
-  gap: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
   white-space: nowrap;
   /* Card Matching Styling Traits */
   background-color: #000000;
   border-radius: 0 0 12px 12px; /* Keeps your crisp bottom corner curves */
 }
 
- /*  SMOOTH CURVED FLARES (OUTWARD SWOOP EFFECTS) */
+/*  SMOOTH CURVED FLARES (OUTWARD SWOOP EFFECTS) */
 /* Left side outward curve */
 .nav-buttons-anchored::before {
   content: "";
@@ -152,8 +177,8 @@ h1 {
   background: transparent;
   border-top-right-radius: 25px; /* Creates the smooth inward-to-outward flare curve */
   box-shadow: 8px -8px 0 0 #000000;
-      z-index: -1;           /* Moves the flare behind the buttons */
-    pointer-events: none;  /* Prevents the flare from blocking mouse/hover interactions */
+  z-index: -1; /* Moves the flare behind the buttons */
+  pointer-events: none; /* Prevents the flare from blocking mouse/hover interactions */
 }
 
 /* Right side outward curve */
@@ -165,95 +190,97 @@ h1 {
   width: 25px;
   height: 20px;
   background: transparent;
-  border-top-left-radius: 25px;  /* Creates the smooth inward-to-outward flare curve */
+  border-top-left-radius: 25px; /* Creates the smooth inward-to-outward flare curve */
   box-shadow: -8px -8px 0 0 #000000;
-      z-index: -1;           /* Moves the flare behind the buttons */
-    pointer-events: none;  /* Prevents the flare from blocking mouse/hover interactions */
+  z-index: -1; /* Moves the flare behind the buttons */
+  pointer-events: none; /* Prevents the flare from blocking mouse/hover interactions */
 }
 
-
 .nav-btn-home {
-  background-image: url('https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/20260704_111639.jpg');  
+  background-image: url("https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/20260704_111639.jpg");
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat; 
+  background-repeat: no-repeat;
   color: white;
   font-weight: bold;
   font-size: 16px;
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
   width: 150px;
   height: 30px;
-  box-sizing: border-box; 
-  padding-bottom: 40px;   
+  box-sizing: border-box;
+  padding-bottom: 40px;
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  transition: transform 0.2s ease;}
+  transition: transform 0.2s ease;
+}
 .nav-btn-home:hover {
   opacity: 0.9;
   transform: scale(1.05);
 }
-  
+
 .nav-btn-camping {
-  background-image: url('https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/image_ca4cc3a2.jpg');  
+  background-image: url("https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/image_ca4cc3a2.jpg");
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat; 
+  background-repeat: no-repeat;
   color: white;
   font-weight: bold;
   font-size: 16px;
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
   width: 150px;
   height: 30px;
-  box-sizing: border-box; 
-  padding-bottom: 40px;   
+  box-sizing: border-box;
+  padding-bottom: 40px;
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  transition: transform 0.2s ease;}
+  transition: transform 0.2s ease;
+}
 .nav-btn-camping:hover {
   opacity: 0.9;
   transform: scale(1.05);
 }
 
 .nav-btn-fishing {
-  background-image: url('https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/20170120_161301_IMG_0992.jpg');  
+  background-image: url("https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/20170120_161301_IMG_0992.jpg");
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat; 
+  background-repeat: no-repeat;
   color: white;
   font-weight: bold;
   font-size: 16px;
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
   width: 150px;
   height: 30px;
-  box-sizing: border-box; 
-  padding-bottom: 40px;   
+  box-sizing: border-box;
+  padding-bottom: 40px;
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  transition: transform 0.2s ease;}
+  transition: transform 0.2s ease;
+}
 .nav-btn-fishing:hover {
   opacity: 0.9;
   transform: scale(1.05);
 }
 
 /* ==========================================================================
-   4. Right Side Buttons (Original Separate Custom Sizes)
-   ========================================================================== */
+     4. Right Side Buttons (Original Separate Custom Sizes)
+     ========================================================================== */
 .bible-btn {
-  background-image: url('https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/photo-1450558415837-1f5e21a17709.avif');  
+  background-image: url("https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/photo-1450558415837-1f5e21a17709.avif");
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat; 
+  background-repeat: no-repeat;
   color: white;
   font-weight: bold;
   font-size: 16px;
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
   width: 60px;
   height: 80px;
-  box-sizing: border-box; 
-  padding-bottom: 40px;   
+  box-sizing: border-box;
+  padding-bottom: 40px;
   border: 2px solid #000000;
   border-radius: 8px;
   cursor: pointer;
@@ -265,18 +292,18 @@ h1 {
 }
 
 .church-btn {
-  background-image: url('https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/logo.png');  
+  background-image: url("https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/logo.png");
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat; 
+  background-repeat: no-repeat;
   color: white;
   font-weight: bold;
   font-size: 16px;
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
   width: 150px;
   height: 30px;
-  box-sizing: border-box; 
-  padding-bottom: 40px;   
+  box-sizing: border-box;
+  padding-bottom: 40px;
   border: 2px solid #00a1dd;
   border-radius: 8px;
   cursor: pointer;
@@ -288,56 +315,59 @@ h1 {
 }
 
 /* ==========================================================================
-   5. Content Cards & Scaling
-   ========================================================================== */
-.card { 
-  width: 100%; 
-  max-width: 800px; 
-  display: block; 
-  padding: 0 20px;  
-  background-color: rgba(255, 255, 255, 0.85); 
-  padding: 30px;                         
-  border-radius: 8px;                         
+     5. Content Cards & Scaling
+     ========================================================================== */
+.card {
+  width: 100%;
+  max-width: 800px;
+  display: block;
+  padding: 0 20px;
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 30px;
+  border-radius: 8px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  box-sizing: border-box; 
+  box-sizing: border-box;
 }
 
-.card img.responsive-img { 
-  width: calc(100% + 40px); 
-  max-width: none; 
-  margin-left: -20px; 
-  height: auto; 
-  display: block; 
-  margin-top: 15px; 
+.card img.responsive-img {
+  width: calc(100% + 40px);
+  max-width: none;
+  margin-left: -20px;
+  height: auto;
+  display: block;
+  margin-top: 15px;
 }
-
 
 /* PAGE SPECIFIC BACKGROUND IMAGES */
 /* Index/Home Page Background */
-body.index-b-page {    
+body.index-b-page {
   background-image: url("https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/20180610_144339_1F39E90D-0541-4893-8704-A8CA6835F2B8.jpg");
   background-attachment: fixed;
   background-size: cover;
   background-position: center top;
-  background-repeat: no-repeat;}
+  background-repeat: no-repeat;
+}
 /* Camping Page Background */
-body.camping-b-page {    
+body.camping-b-page {
   background-image: url("https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/image_ca4cc3a2.jpg");
   background-attachment: fixed;
   background-size: cover;
   background-position: center top;
-  background-repeat: no-repeat;}
+  background-repeat: no-repeat;
+}
 /* Fishing Page Background */
-body.fishing-b-page {    
+body.fishing-b-page {
   background-image: url("https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/20170120_161301_IMG_0992.jpg");
   background-attachment: fixed;
   background-size: cover;
   background-position: center top;
-  background-repeat: no-repeat;}
+  background-repeat: no-repeat;
+}
 /* Bible Page Background */
-body.bible-b-page {    
+body.bible-b-page {
   background-image: url("https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/photo-1450558415837-1f5e21a17709.avif");
   background-attachment: fixed;
   background-size: cover;
   background-position: center top;
-  background-repeat: no-repeat;}
+  background-repeat: no-repeat;
+}
