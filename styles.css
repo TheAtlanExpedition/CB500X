@@ -45,18 +45,18 @@ p, figcaption, h4, .handlee-regular {
 
 /* PAGE SPECIFIC HEADER BACKGROUND IMAGES */
 .header-container.index-page {
-  background-image: linear-gradient(rgba(255, 255, 255, 0.52), rgba(255, 255, 255, 0.2)), url("https://raw.githubusercontent.com/TheAtlanExpedition/CB500X-Adventures/refs/heads/main/Images/20260704_111639.jpg");
+  background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url("https://raw.githubusercontent.com/TheAtlanExpedition/CB500X-Adventures/refs/heads/main/Images/20260704_111639.jpg");
 }
 
 .header-container.camping-page {
-  background-image: linear-gradient(rgba(255, 255, 255, 0.52), rgba(255, 255, 255, 0.2)), url("https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/tent-at-mountain-landscape-at-sunset-generative-ai-photo.jpg");
+  background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url("https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/image_ca4cc3a2.jpg");
 }
 
 .header-container.fishing-page {
-  background-image: linear-gradient(rgba(255, 255, 255, 0.52), rgba(255, 255, 255, 0.2)), url("https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/360_F_723911075_5cpkteKfZw6iVbQNGh294w0EoOCyPMu0.jpg");
+  background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url("https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/20170120_161301_IMG_0992.jpg");
 }
 .header-container.bible-page {
-  background-image: linear-gradient(rgba(255, 255, 255, 0.52), rgba(255, 255, 255, 0.2)), url("https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/the-holy-bible-with-sun-beam-website-header.jpg");
+  background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url("https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/the-holy-bible-with-sun-beam-website-header.jpg");
 }
 
 .flex-container { 
@@ -149,7 +149,7 @@ p, figcaption, h4, .handlee-regular {
 }
   
 .nav-btn-camping {
-  background-image: url('https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/tent-at-mountain-landscape-at-sunset-generative-ai-photo.jpg');  
+  background-image: url('https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/image_ca4cc3a2.jpg');  
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat; 
@@ -172,7 +172,7 @@ p, figcaption, h4, .handlee-regular {
 }
 
 .nav-btn-fishing {
-  background-image: url('https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/360_F_723911075_5cpkteKfZw6iVbQNGh294w0EoOCyPMu0.jpg');  
+  background-image: url('https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/20170120_161301_IMG_0992.jpg');  
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat; 
