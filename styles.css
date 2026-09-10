@@ -132,7 +132,6 @@ h1 {
   color: #000000;
   box-sizing: border-box;
 }
-
 .h4 {
   font-weight: normal;
 }
@@ -160,9 +159,8 @@ h1 {
   justify-content: center;
   gap: 5px;
   white-space: nowrap;
-  /* Card Matching Styling Traits */
-  background-color: #000000;
-  border-radius: 0 0 12px 12px; /* Keeps your crisp bottom corner curves */
+  background-color: #000000; 
+  border-radius: 0 0 12px 12px;
 }
 
 /*  SMOOTH CURVED FLARES (OUTWARD SWOOP EFFECTS) */
@@ -175,10 +173,10 @@ h1 {
   width: 25px;
   height: 20px;
   background: transparent;
-  border-top-right-radius: 25px; /* Creates the smooth inward-to-outward flare curve */
+  border-top-right-radius: 25px; 
   box-shadow: 8px -8px 0 0 #000000;
-  z-index: -1; /* Moves the flare behind the buttons */
-  pointer-events: none; /* Prevents the flare from blocking mouse/hover interactions */
+  z-index: -1; 
+  pointer-events: none;
 }
 
 /* Right side outward curve */
@@ -190,10 +188,10 @@ h1 {
   width: 25px;
   height: 20px;
   background: transparent;
-  border-top-left-radius: 25px; /* Creates the smooth inward-to-outward flare curve */
+  border-top-left-radius: 25px; 
   box-shadow: -8px -8px 0 0 #000000;
-  z-index: -1; /* Moves the flare behind the buttons */
-  pointer-events: none; /* Prevents the flare from blocking mouse/hover interactions */
+  z-index: -1; 
+  pointer-events: none;
 }
 
 .nav-btn-home {
