@@ -168,8 +168,8 @@ h1 {
 .nav-buttons-anchored::before {
   content: "";
   position: absolute;
-  top: 1px;
-  left: -22px;
+  top: 1.5px;
+  left: -24px;
   width: 25px;
   height: 19px;
   background: transparent;
@@ -183,8 +183,8 @@ h1 {
 .nav-buttons-anchored::after {
   content: "";
   position: absolute;
-  top: 1px;
-  right: -22px;
+  top: 1.5px;
+  right: -24px;
   width: 25px;
   height: 19px;
   background: transparent;
