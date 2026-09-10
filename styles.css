@@ -45,19 +45,13 @@ p, figcaption, h4, .handlee-regular {
 
 /* PAGE SPECIFIC HEADER BACKGROUND IMAGES */
 .header-container.index-page {
-  background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url("https://raw.githubusercontent.com/TheAtlanExpedition/CB500X-Adventures/refs/heads/main/Images/20260704_111639.jpg");
-}
-
+  background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url("https://raw.githubusercontent.com/TheAtlanExpedition/CB500X-Adventures/refs/heads/main/Images/20260704_111639.jpg");}
 .header-container.camping-page {
-  background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url("https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/image_ca4cc3a2.jpg");
-}
-
+  background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url("https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/image_ca4cc3a2.jpg");}
 .header-container.fishing-page {
-  background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url("https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/20170120_161301_IMG_0992.jpg");
-}
+  background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url("https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/20170120_161301_IMG_0992.jpg");}
 .header-container.bible-page {
-  background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url("https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/the-holy-bible-with-sun-beam-website-header.jpg");
-}
+  background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url("https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/the-holy-bible-with-sun-beam-website-header.jpg");}
 
 .flex-container { 
   display: flex; 
@@ -141,8 +135,7 @@ p, figcaption, h4, .handlee-regular {
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  transition: transform 0.2s ease;
-}
+  transition: transform 0.2s ease;}
 .nav-btn-home:hover {
   opacity: 0.9;
   transform: scale(1.15);
@@ -164,8 +157,7 @@ p, figcaption, h4, .handlee-regular {
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  transition: transform 0.2s ease;
-}
+  transition: transform 0.2s ease;}
 .nav-btn-camping:hover {
   opacity: 0.9;
   transform: scale(1.15);
@@ -187,8 +179,7 @@ p, figcaption, h4, .handlee-regular {
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  transition: transform 0.2s ease;
-}
+  transition: transform 0.2s ease;}
 .nav-btn-fishing:hover {
   opacity: 0.9;
   transform: scale(1.15);
