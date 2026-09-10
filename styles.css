@@ -137,12 +137,10 @@ h1 {
   white-space: nowrap;
   /* Card Matching Styling Traits */
   background-color: #000000;
-  border-radius: 0 0 8px 8px; /* Keeps your crisp bottom corner curves */
+  border-radius: 0 0 12px 12px; /* Keeps your crisp bottom corner curves */
 }
 
-/* ==========================================================================
-   SMOOTH CURVED FLARES (OUTWARD SWOOP EFFECTS)
-   ========================================================================== */
+ /*  SMOOTH CURVED FLARES (OUTWARD SWOOP EFFECTS) */
 /* Left side outward curve */
 .nav-buttons-anchored::before {
   content: "";
