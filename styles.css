@@ -164,11 +164,12 @@ h1 {
 }
 
 /*  SMOOTH CURVED FLARES (OUTWARD SWOOP EFFECTS) */
+
 /* Left side outward curve */
 .nav-buttons-anchored::before {
   content: "";
   position: absolute;
-  top: 1.5px;
+  top: 2px;
   left: -24px;
   width: 25px;
   height: 19px;
@@ -183,7 +184,7 @@ h1 {
 .nav-buttons-anchored::after {
   content: "";
   position: absolute;
-  top: 1.5px;
+  top: 2px;
   right: -24px;
   width: 25px;
   height: 19px;
