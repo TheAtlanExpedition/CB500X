@@ -44,19 +44,6 @@ p, figcaption, h4, .handlee-regular {
   justify-content: center; 
   box-sizing: border-box; } 
 
-/* Inner alignment track for text typography */
-.header-container h1 { 
-  font-family: "Merriweather", serif; 
-  margin: 0; 
-  font-size: 4rem; 
-  line-height: .9; 
-  text-align: left; 
-  color: #000000; 
-  box-sizing: border-box; } 
-
-.h4 { 
-  font-weight: normal; }
-
 .flex-container { 
   display: flex; 
   align-items: center; 
@@ -73,6 +60,26 @@ p, figcaption, h4, .handlee-regular {
   align-items: center; 
   gap: 15px; 
   position: relative; }
+ 
+  /* Inner alignment track for text typography */
+.header-container h1 { 
+  font-family: "Merriweather", serif; 
+  translate: 0px 0px;
+  font-size: 2.8rem; 
+  line-height: .9; 
+  text-align: left; 
+  color: #000000; 
+  box-sizing: border-box; } 
+.header-container p { 
+  font-family: "Merriweather", serif; 
+  translate: 0px -6.5px;
+  font-size: 6.6rem; 
+  text-align: left; 
+  color: #000000; 
+  box-sizing: border-box; } 
+
+.h4 { 
+  font-weight: normal; }
 
 /* Responsive story container */
 .card { 
@@ -99,8 +106,19 @@ p, figcaption, h4, .handlee-regular {
   left: 50%;
   transform: translateX(-50%);
   display: flex;
-  gap: 15px;
+  gap: 11px;
   white-space: nowrap;} 
+ .nav-buttons-anchored{  
+  bottom: -56px;
+  width: 110%; height: 57px; 
+  background-image:url("https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/20180610_144339_1F39E90D-0541-4893-8704-A8CA6835F2B8.jpg");
+  background-size: cover;
+  border: 5px solid #000000; 
+  background-position: center; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  box-sizing: border-box; }
 
 .nav-btn-home {
   background-image: url('https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/20260704_111639.jpg');  
@@ -111,8 +129,10 @@ p, figcaption, h4, .handlee-regular {
   font-weight: bold;
   font-size: 16px;
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
-  width: 200px;
-  height: 60px;
+  width: 150px;
+  height: 30px;
+  box-sizing: border-box; 
+  padding-bottom: 40px;   
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -130,8 +150,10 @@ p, figcaption, h4, .handlee-regular {
   font-weight: bold;
   font-size: 16px;
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
-  width: 200px;
-  height: 60px;
+  width: 150px;
+  height: 30px;
+  box-sizing: border-box; 
+  padding-bottom: 40px;   
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -149,8 +171,10 @@ p, figcaption, h4, .handlee-regular {
   font-weight: bold;
   font-size: 16px;
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
-  width: 200px;
-  height: 60px;
+  width: 150px;
+  height: 30px;
+  box-sizing: border-box; 
+  padding-bottom: 40px;   
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -159,12 +183,13 @@ p, figcaption, h4, .handlee-regular {
   opacity: 0.9;
   transform: scale(1.15);}
 
+
 /*3. Rightside group */
 .church-btn { 
   border: 5px solid #000000; 
   cursor: pointer; 
   position:absolute; 
-  top:-70px; right:-250px;}
+  top:-100px; right:-290px;}
 .church-btn:hover { 
   transform: scale(1.15); 
   transition: transform 0.2s ease;}         
@@ -176,8 +201,8 @@ p, figcaption, h4, .handlee-regular {
   <div class="flex-container">
     <!-- 1. Left Side Group -->
     <div class="brand-group">
-      <p style="font-size: 135px;">&#10014;</p>
-    <h1 style="transform: translate(25px, 0px);">Bible<br>Expedition</h1>
+      <p style="transform: translate(15px, 0px);">&#10014;</p>
+    <h1 style="transform: translate(10.5px, 0px);">Bible<br>Expedition</h1>
     </div>
     <!-- 2. Middle Button Bar -->
       <div class="nav-buttons-anchored">
@@ -187,7 +212,7 @@ p, figcaption, h4, .handlee-regular {
       </div>  
     <!-- 3. Right Side Group -->
     <div class="right-menu">    
-      <a href="https://www.seelifebaptistchurch.org.au/"><button class="church-btn" style="scale:30%;"><img src="https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/logo.png" ></button></a>
+      <a href="https://www.seelifebaptistchurch.org.au/"><button class="church-btn" style="scale:20%;"><img src="https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/logo.png" ></button></a>
     </div>
   </div>
 </div>
