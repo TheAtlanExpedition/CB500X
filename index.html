@@ -78,6 +78,26 @@ p, figcaption, h4, .handlee-regular {
   align-items: center; 
   gap: 15px; 
   position: relative; }
+ 
+  /* Inner alignment track for text typography */
+.header-container h1 { 
+  font-family: "Merriweather", serif; 
+  translate: 0px 0px;
+  font-size: 2.8rem; 
+  line-height: .9; 
+  text-align: left; 
+  color: #000000; 
+  box-sizing: border-box; } 
+.header-container p { 
+  font-family: "Merriweather", serif; 
+  translate: 0px -6.5px;
+  font-size: 6.6rem; 
+  text-align: left; 
+  color: #000000; 
+  box-sizing: border-box; } 
+
+.h4 { 
+  font-weight: normal; }
 
 /* Responsive story container */
 .card { 
@@ -188,8 +208,8 @@ p, figcaption, h4, .handlee-regular {
   cursor: pointer; 
   top: 0px; 
   left: 0px;
-  width: 80px;
-  height: 100px;
+  width: 60px;
+  height: 80px;
   display: inline-block;
   overflow: hidden; 
   transition: transform 0.2s ease;}
@@ -210,7 +230,7 @@ p, figcaption, h4, .handlee-regular {
   <div class="flex-container">
     <!-- 1. Left Side Group -->
     <div class="brand-group">
-      <p style="font-size: 150px; margin: 0;">&#9736;</p>
+      <p>&#9736;</p>
       <h1>The Atlan<br>Expedition</h1>
     </div>
     <!-- 2. Middle Button Bar -->
