@@ -73,6 +73,26 @@ p, figcaption, h4, .handlee-regular {
   align-items: center; 
   gap: 15px; 
   position: relative; }
+ 
+  /* Inner alignment track for text typography */
+.header-container h1 { 
+  font-family: "Merriweather", serif; 
+  translate: 0px 0px;
+  font-size: 2.8rem; 
+  line-height: .9; 
+  text-align: left; 
+  color: #000000; 
+  box-sizing: border-box; } 
+.header-container p { 
+  font-family: "Merriweather", serif; 
+  translate: 0px -6.5px;
+  font-size: 6.6rem; 
+  text-align: left; 
+  color: #000000; 
+  box-sizing: border-box; } 
+
+.h4 { 
+  font-weight: normal; }
 
 /* Responsive story container */
 .card { 
@@ -99,8 +119,19 @@ p, figcaption, h4, .handlee-regular {
   left: 50%;
   transform: translateX(-50%);
   display: flex;
-  gap: 15px;
+  gap: 11px;
   white-space: nowrap;} 
+ .nav-buttons-anchored{  
+  bottom: -56px;
+  width: 110%; height: 57px; 
+  background-image:url("https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/20180610_144339_1F39E90D-0541-4893-8704-A8CA6835F2B8.jpg");
+  background-size: cover;
+  border: 5px solid #000000; 
+  background-position: center; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  box-sizing: border-box; }
 
 .nav-btn-home {
   background-image: url('https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/20260704_111639.jpg');  
@@ -111,8 +142,10 @@ p, figcaption, h4, .handlee-regular {
   font-weight: bold;
   font-size: 16px;
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
-  width: 200px;
-  height: 60px;
+  width: 150px;
+  height: 30px;
+  box-sizing: border-box; 
+  padding-bottom: 40px;   
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -130,8 +163,10 @@ p, figcaption, h4, .handlee-regular {
   font-weight: bold;
   font-size: 16px;
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
-  width: 200px;
-  height: 60px;
+  width: 150px;
+  height: 30px;
+  box-sizing: border-box; 
+  padding-bottom: 40px;   
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -149,8 +184,10 @@ p, figcaption, h4, .handlee-regular {
   font-weight: bold;
   font-size: 16px;
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
-  width: 200px;
-  height: 60px;
+  width: 150px;
+  height: 30px;
+  box-sizing: border-box; 
+  padding-bottom: 40px;   
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -166,8 +203,8 @@ p, figcaption, h4, .handlee-regular {
   cursor: pointer; 
   top: 0px; 
   left: 0px;
-  width: 80px;
-  height: 100px;
+  width: 60px;
+  height: 80px;
   display: inline-block;
   overflow: hidden; 
   transition: transform 0.2s ease;}
@@ -182,7 +219,6 @@ p, figcaption, h4, .handlee-regular {
   display: block;}
   
 </style>
-
 </head>
  <!--  ✟  ☷ -->
 <body>
@@ -190,7 +226,7 @@ p, figcaption, h4, .handlee-regular {
   <div class="flex-container">
     <!-- 1. Left Side Group -->
     <div class="brand-group">
-      <p style="font-size: 150px;">&#9736;</p>
+      <p>&#9736;</p>
       <h1>Camping<br>Expedition</h1>
     </div>
     <!-- 2. Middle Button Bar -->
