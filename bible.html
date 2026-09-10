@@ -185,14 +185,27 @@ p, figcaption, h4, .handlee-regular {
 
 
 /*3. Rightside group */
-.church-btn { 
-  border: 5px solid #000000; 
-  cursor: pointer; 
-  position:absolute; 
-  top:-100px; right:-290px;}
-.church-btn:hover { 
-  transform: scale(1.15); 
-  transition: transform 0.2s ease;}         
+.church-btn {
+  background-image: url('https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/logo.png');  
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; 
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+  width: 150px;
+  height: 50px;
+  box-sizing: border-box; 
+  padding-bottom: 40px;   
+  border: none;
+  border: 2px solid #000000; 
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease;}
+.church-btn:hover {
+  opacity: 0.9;
+  transform: scale(1.15);}
 </style>
 </head>
  <!--  ✟   -->
@@ -212,7 +225,7 @@ p, figcaption, h4, .handlee-regular {
       </div>  
     <!-- 3. Right Side Group -->
     <div class="right-menu">    
-      <a href="https://www.seelifebaptistchurch.org.au/"><button class="church-btn" style="scale:20%;"><img src="https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/logo.png" ></button></a>
+      <a href="https://www.seelifebaptistchurch.org.au/"><button class="church-btn"></button></a>
     </div>
   </div>
 </div>
