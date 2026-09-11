@@ -12,37 +12,51 @@ body {
   background-color: #f5f5f5;
 }
 
-/* Font Families */
+/* ==========================================================================
+ Font Families
+ ========================================================================== */
+/* 1. Large Cursive Titles (Matching your original h2 and h3 rules) */
 h2,
 h3,
 .handlee-regular {
-  font-family: "Handlee", cursive;
+  font-family: "Handlee", cursive !important;
   font-weight: 400;
   font-style: normal;
-  font-size: 2.5rem;
 }
+
+/* 2. Standard Cursive Body Text (Matching your original p, h4, and figcaption rules) */
+body,
+html,
 p,
-figcaption,
-h4,
+span,
+a,
+button,
 .handlee-regular {
-  font-family: "Handlee", cursive;
+  font-family: "Handlee", cursive !important;
   font-weight: 400;
   font-style: normal;
-  font-size: 1.5rem;
 }
+
+/* 3. Large Serif Title (Matching your original h1 rule) */
 h1 {
-  font-family: "Merriweather", serif;
-  translate: 0px 0px;
-  font-size: 2.8rem;
-  line-height: 0.9;
-  text-align: left;
-  color: #000000;
-  box-sizing: border-box;
+  font-family: "Merriweather", Georgia, serif !important;
+}
+/* Add this below your font definitions to enforce strict selection mapping */
+*,
+*::before,
+*::after {
+  font-family: inherit;
+}
+
+body,
+html {
+  font-family: "Merriweather", sans-serif;
+  font-family: "Handlee", cursive;
 }
 
 /* ==========================================================================
-     2. Header Base Structure
-     ========================================================================== */
+       2. Header Base Structure
+       ========================================================================== */
 .header-container {
   position: sticky;
   top: 0;
@@ -137,8 +151,8 @@ h1 {
 }
 
 /* ==========================================================================
-     3. Navigation Track & Buttons
-     ========================================================================== */
+       3. Navigation Track & Buttons
+       ========================================================================== */
 
 /* Centered Navigation Bar Panel with White Glass Background */
 .nav-buttons-anchored {
@@ -159,7 +173,7 @@ h1 {
   justify-content: center;
   gap: 5px;
   white-space: nowrap;
-  background-color: #000000; 
+  background-color: #000000;
   border-radius: 0 0 12px 12px;
 }
 
@@ -169,14 +183,14 @@ h1 {
 .nav-buttons-anchored::before {
   content: "";
   position: absolute;
-  top: 4px;
+  top: 1px;
   left: -24px;
   width: 25px;
   height: 19px;
   background: transparent;
-  border-top-right-radius: 25px; 
+  border-top-right-radius: 25px;
   box-shadow: 8px -8px 0 0 #000000;
-  z-index: -1; 
+  z-index: -1;
   pointer-events: none;
 }
 
@@ -184,14 +198,14 @@ h1 {
 .nav-buttons-anchored::after {
   content: "";
   position: absolute;
-  top: 4px;
+  top: 1px;
   right: -24px;
   width: 25px;
   height: 19px;
   background: transparent;
-  border-top-left-radius: 25px; 
+  border-top-left-radius: 25px;
   box-shadow: -8px -8px 0 0 #000000;
-  z-index: -1; 
+  z-index: -1;
   pointer-events: none;
 }
 
@@ -265,8 +279,8 @@ h1 {
 }
 
 /* ==========================================================================
-     4. Right Side Buttons (Original Separate Custom Sizes)
-     ========================================================================== */
+       4. Right Side Buttons (Original Separate Custom Sizes)
+       ========================================================================== */
 .bible-btn {
   background-image: url("https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/photo-1450558415837-1f5e21a17709.avif");
   background-size: cover;
@@ -314,8 +328,8 @@ h1 {
 }
 
 /* ==========================================================================
-     5. Content Cards & Scaling
-     ========================================================================== */
+       5. Content Cards & Scaling
+       ========================================================================== */
 .card {
   width: 100%;
   max-width: 800px;
