@@ -129,6 +129,8 @@ html {
   padding: 0 20px;
   box-sizing: border-box;
   position: relative;
+  width: 1900px;
+  height: 400px;
   z-index: 2; /* Keeps text and buttons above background image layers */
 }
 
