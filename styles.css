@@ -118,6 +118,8 @@ html {
     url("https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/the-holy-bible-with-sun-beam-website-header.jpg");
 }
 
+/* --- Title Panel Frame Setup --- */
+
 .flex-container {
   display: flex;
   align-items: center;
@@ -126,32 +128,62 @@ html {
   max-width: 1900px;
   padding: 0 20px;
   box-sizing: border-box;
+  position: relative;
+  z-index: 2; /* Keeps text and buttons above background image layers */
 }
-/* Stacks all direct children on top of each other in the same space */
+
+.brand-box-container {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(6px);
+  border: 3px solid #000000;
+  border-radius: 16px;
+  padding: 12px 30px 12px 15px;
+  box-sizing: border-box;
+}
+
+/* Text grid stack isolated cleanly inside the wrapper panel */
 .brand-group {
   display: grid;
   grid-template-areas: "stack";
   position: relative;
+  bottom: 0px;
+  left: 2.5%;
 }
-/* Forces the symbol and the text wrapper to occupy the exact same grid cell */
+
 .brand-group > * {
   grid-area: stack;
 }
-/* Independent positioning for your symbol */
-.brand-group img,
-.brand-group svg,
+
+/* --- DISREGARD ALL SYMBOL-SPECIFIC SPACING --- */
 .brand-group .symbol-class {
   align-self: center;
   justify-self: start;
-  margin-left: 0px;
+  font-size: 6.4rem;
+
+  /* CRITICAL LOCKS: Strips the element of physical width or margin footprints */
+  margin: 0 !important; /* Destroys any browser default or injected margins */
+  padding: 0 !important; /* Destroys any browser default padding */
+  width: 0px !important; /* Forces layout footprint to absolute zero */
+  height: 0px !important;
+  display: inline-flex; /* Normalizes rendering behavior */
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap; /* Stops wider characters from causing text-wrap shifts */
+  overflow: visible; /* Allows the large graphic to still visually display outside the 0px box */
 }
-/*  Independent positioning for your text container */
+
+/* --- THE LOCK: ABSOLUTE TEXT PLACEMENT --- */
 .brand-group .text-wrapper-class {
   align-self: center;
   justify-self: start;
-  margin-left: 80px;
-}
-.header-container h1 {
+
+  /* 
+    This margin calculates the distance directly from the absolute left border of your .brand-box-container. */
+  margin-left: 40px;
+  margin-bottom: 25px;
+
+  /* Text Typography Styles */
   font-family: "Merriweather", serif;
   transform: translate(0px, -3px);
   font-size: 2.8rem;
@@ -159,17 +191,6 @@ html {
   text-align: left;
   color: #000000;
   box-sizing: border-box;
-}
-.header-container p {
-  font-family: "Merriweather", serif;
-  transform: translate(0px, -2px);
-  font-size: 6.3rem;
-  text-align: left;
-  color: #000000;
-  box-sizing: border-box;
-}
-.h4 {
-  font-weight: normal;
 }
 
 /* ==========================================================================
@@ -179,7 +200,7 @@ html {
 /* Centered Navigation Bar Panel with White Glass Background */
 .nav-buttons-anchored {
   position: absolute;
-  bottom: -55px;
+  bottom: -37px;
   left: 50%;
   transform: translateX(-50%);
   /* Layout Sizing & Padding Structure */
