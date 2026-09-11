@@ -257,9 +257,9 @@ html {
 
 /* Centered Navigation Bar Panel with White Glass Background */
 .nav-buttons-anchored {
-  position: fixed;
-  top: 107px;
-  left: 50%;
+  position: absolute;
+  top: 257px;
+  left: 34%;
   transform: translateX(-50%);
   z-index: 9999;
   width: 472px;
@@ -277,7 +277,7 @@ html {
   border-radius: 0 0 12px 12px;
 }
 
-/*  SMOOTH CURVED FLARES (OUTWARD SWOOP EFFECTS) */
+/*  SMOOTH CURVED FLARES */
 
 /* Left side outward curve */
 .nav-buttons-anchored::before {
@@ -291,9 +291,7 @@ html {
   border-top-right-radius: 25px;
   box-shadow: 8px -8px 0 0 #000000;
   z-index: -1;
-  pointer-events: none;
-}
-
+  pointer-events: none;}
 /* Right side outward curve */
 .nav-buttons-anchored::after {
   content: "";
@@ -308,7 +306,7 @@ html {
   z-index: -1;
   pointer-events: none;
 }
-
+/* NAV BTNS */
 .nav-btn-home {
   background-image: url("https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/20260704_111639.jpg");
   background-size: cover;
