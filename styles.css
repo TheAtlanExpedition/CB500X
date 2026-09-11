@@ -199,10 +199,11 @@ html {
 
 /* Centered Navigation Bar Panel with White Glass Background */
 .nav-buttons-anchored {
-  position: absolute;
-  bottom: -37px;
+  position: fixed;
+  top: 107px;
   left: 50%;
   transform: translateX(-50%);
+  z-index: 9999;
   /* Layout Sizing & Padding Structure */
   width: 90%;
   max-width: 472px;
