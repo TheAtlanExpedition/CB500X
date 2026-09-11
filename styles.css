@@ -437,7 +437,7 @@ html {
   background-color: rgba(255, 255, 255, 0.85);
   margin-left: auto; /* Keeps it weighted to the right */
   /* FIX: Pushes the card away from the right edge by 40px */
-  margin-right: 40px;
+  margin-right: 60px;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
