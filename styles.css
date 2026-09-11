@@ -205,9 +205,7 @@ html {
   left: 50%;
   transform: translateX(-50%);
   z-index: 9999;
-  /* Layout Sizing & Padding Structure */
-  width: 90%;
-  max-width: 472px;
+  width: 472px;
   height: 50px;
   padding-bottom: 34px;
   padding: 0 30px;
@@ -228,7 +226,7 @@ html {
 .nav-buttons-anchored::before {
   content: "";
   position: absolute;
-  top: 1px;
+  top: 0px;
   left: -24px;
   width: 25px;
   height: 19px;
@@ -398,7 +396,7 @@ html {
 
 /* PAGE SPECIFIC BACKGROUND IMAGES */
 /* Index/Home Page Background */
-body.index-b-page {
+body .index-b-page {
   background-image: url("https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/20180610_144339_1F39E90D-0541-4893-8704-A8CA6835F2B8.jpg");
   background-attachment: fixed;
   background-size: cover;
