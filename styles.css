@@ -398,7 +398,7 @@ html {
 
 /* PAGE SPECIFIC BACKGROUND IMAGES */
 /* Index/Home Page Background */
-body .index-b-page {
+body.index-b-page {
   background-image: url("https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/20180610_144339_1F39E90D-0541-4893-8704-A8CA6835F2B8.jpg");
   background-attachment: fixed;
   background-size: cover;
