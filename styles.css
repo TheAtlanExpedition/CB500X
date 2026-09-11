@@ -1,4 +1,6 @@
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box !important;
 }
 /* ==========================================================================
@@ -80,12 +82,13 @@ html {
   position: absolute;
   left: 0;
   width: 100%;
-  height: 8px;
+  height: 10px;
   background-color: #000000;
   margin-top: 105px;
 }
 
 /* PAGE SPECIFIC HEADER BACKGROUND IMAGES */
+
 .header-container.index-h-page {
   background-image: linear-gradient(
       rgba(255, 255, 255, 0.2),
@@ -124,17 +127,33 @@ html {
   padding: 0 20px;
   box-sizing: border-box;
 }
-
+/* Stacks all direct children on top of each other in the same space */
 .brand-group {
-  display: flex;
-  align-items: center;
-  gap: 15px;
+  display: grid;
+  grid-template-areas: "stack";
   position: relative;
 }
-
+/* Forces the symbol and the text wrapper to occupy the exact same grid cell */
+.brand-group > * {
+  grid-area: stack;
+}
+/* Independent positioning for your symbol */
+.brand-group img,
+.brand-group svg,
+.brand-group .symbol-class {
+  align-self: center;
+  justify-self: start;
+  margin-left: 0px;
+}
+/*  Independent positioning for your text container */
+.brand-group .text-wrapper-class {
+  align-self: center;
+  justify-self: start;
+  margin-left: 80px;
+}
 .header-container h1 {
   font-family: "Merriweather", serif;
-  translate: 0px -3px;
+  transform: translate(0px, -3px);
   font-size: 2.8rem;
   line-height: 0.9;
   text-align: left;
@@ -143,7 +162,7 @@ html {
 }
 .header-container p {
   font-family: "Merriweather", serif;
-  translate: 0px -2px;
+  transform: translate(0px, -2px);
   font-size: 6.3rem;
   text-align: left;
   color: #000000;
@@ -155,7 +174,7 @@ html {
 
 /* ==========================================================================
        3. Navigation Track & Buttons
-       ========================================================================== */
+ ========================================================================== */
 
 /* Centered Navigation Bar Panel with White Glass Background */
 .nav-buttons-anchored {
