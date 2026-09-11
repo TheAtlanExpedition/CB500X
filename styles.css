@@ -69,7 +69,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: right;
   box-sizing: border-box;
   background-color: #f5f5f5;
 }
@@ -254,44 +254,33 @@ html {
 /* ==========================================================================
        3. Navigation Track & Buttons
  ========================================================================== */
-
-/* Centered Navigation Bar Panel with White Glass Background */
+/* Centered Navigation Bar Panel with Black Glass Background - STACKED */
 .nav-buttons-anchored {
   position: absolute;
-  top: 257px;
-  left: 34%;
+  top: 256px;
+  left: 93px;
   transform: translateX(-50%);
   z-index: 9999;
-  width: 472px;
-  height: 50px;
-  padding-bottom: 34px;
-  padding: 0 30px;
+
+  /* --- CHANGED FOR VERTICAL STACKING --- */
+  width: auto; /* Lets the width fit the 150px buttons cleanly */
+  height: auto; /* Prevents the 50px limit from smashing the stack */
+  padding: 20px 20px; /* Balanced padding around the vertical group */
   box-sizing: border-box;
-  /* Flexbox Settings to Line Up and Center Buttons */
+
+  /* Flexbox Settings changed to vertical column layout */
   display: flex;
+  flex-direction: column; /* FORCES BUTTONS ONE ABOVE THE OTHER */
   align-items: center;
   justify-content: center;
-  gap: 5px;
+  gap: 15px; /* Increased spacing between stacked buttons */
   white-space: nowrap;
   background-color: #000000;
   border-radius: 0 0 12px 12px;
 }
 
-/*  SMOOTH CURVED FLARES */
+/*  SMOOTH CURVED FLARES (Updated to match vertical box dimensions) */
 
-/* Left side outward curve */
-.nav-buttons-anchored::before {
-  content: "";
-  position: absolute;
-  top: 0px;
-  left: -24px;
-  width: 25px;
-  height: 19px;
-  background: transparent;
-  border-top-right-radius: 25px;
-  box-shadow: 8px -8px 0 0 #000000;
-  z-index: -1;
-  pointer-events: none;}
 /* Right side outward curve */
 .nav-buttons-anchored::after {
   content: "";
@@ -299,14 +288,19 @@ html {
   top: 0px;
   right: -24px;
   width: 25px;
-  height: 19px;
+  height: 25px; /* Square format matches corner transition better */
   background: transparent;
   border-top-left-radius: 25px;
   box-shadow: -8px -8px 0 0 #000000;
   z-index: -1;
   pointer-events: none;
 }
-/* NAV BTNS */
+.nav-btns {
+  position: fixed;
+  left: 20px;
+  top: 20px;
+}
+/* --- INDIVIDUAL NAV BTNS --- */
 .nav-btn-home {
   background-image: url("https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/20260704_111639.jpg");
   background-size: cover;
@@ -317,9 +311,11 @@ html {
   font-size: 16px;
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
   width: 150px;
-  height: 30px;
+  height: 40px; /* Adjusted height to prevent image cropping */
   box-sizing: border-box;
-  padding-bottom: 40px;
+  display: flex; /* Centered button text cleanly inside card */
+  align-items: center;
+  justify-content: center;
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -340,9 +336,11 @@ html {
   font-size: 16px;
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
   width: 150px;
-  height: 30px;
+  height: 40px; /* Adjusted height to prevent image cropping */
   box-sizing: border-box;
-  padding-bottom: 40px;
+  display: flex; /* Centered button text cleanly inside card */
+  align-items: center;
+  justify-content: center;
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -363,9 +361,11 @@ html {
   font-size: 16px;
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
   width: 150px;
-  height: 30px;
+  height: 40px; /* Adjusted height to prevent image cropping */
   box-sizing: border-box;
-  padding-bottom: 40px;
+  display: flex; /* Centered button text cleanly inside card */
+  align-items: center;
+  justify-content: center;
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -429,13 +429,16 @@ html {
        5. Content Cards & Scaling
        ========================================================================== */
 .card {
-  width: 100%;
-  max-width: 800px;
+  /* FIX: Tells the card to scale dynamically but leave a 260px gap on the left for your nav */
+  width: calc(100% - 260px);
+  max-width: 650px;
   display: block;
-  padding: 0 20px;
+  padding: 0px 20px;
   background-color: rgba(255, 255, 255, 0.85);
-  padding: 30px;
-  border-radius: 8px;
+  margin-left: auto; /* Keeps it weighted to the right */
+  /* FIX: Pushes the card away from the right edge by 40px */
+  margin-right: 40px;
+  border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
 }
@@ -451,7 +454,7 @@ html {
 
 /* PAGE SPECIFIC BACKGROUND IMAGES */
 /* Index/Home Page Background */
-body .index-b-page {
+body.index-b-page {
   background-image: url("https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/20180610_144339_1F39E90D-0541-4893-8704-A8CA6835F2B8.jpg");
   background-attachment: fixed;
   background-size: cover;
