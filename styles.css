@@ -1,8 +1,3 @@
-*,
-*::before,
-*::after {
-  box-sizing: border-box !important;
-}
 /* ==========================================================================
    1. Global Page Layout
    ========================================================================== */
@@ -18,8 +13,8 @@ body {
 }
 
 /* ==========================================================================
- Font Families
- ========================================================================== */
+   Font Families
+   ========================================================================== */
 /* 1. Large Cursive Titles (Matching your original h2 and h3 rules) */
 h2,
 h3,
@@ -47,11 +42,6 @@ h1 {
   font-family: "Merriweather", Georgia, serif !important;
 }
 /* Add this below your font definitions to enforce strict selection mapping */
-*,
-*::before,
-*::after {
-  font-family: inherit;
-}
 
 body,
 html {
@@ -60,8 +50,8 @@ html {
 }
 
 /* ==========================================================================
-       2. Header Base Structure
-       ========================================================================== */
+         2. Header Base Structure
+         ========================================================================== */
 .header-container {
   position: sticky;
   top: 0;
@@ -129,7 +119,6 @@ html {
   padding: 0 20px;
   box-sizing: border-box;
   position: relative;
-  width: 1900px;
   height: 400px;
   z-index: 2; /* Keeps text and buttons above background image layers */
 }
@@ -137,7 +126,6 @@ html {
 .brand-box-container {
   display: inline-block;
   background: rgba(255, 255, 255, 0.45);
-  backdrop-filter: blur(6px);
   border: 3px solid #000000;
   border-radius: 16px;
   padding: 12px 30px 12px 15px;
@@ -150,7 +138,7 @@ html {
   grid-template-areas: "stack";
   position: relative;
   bottom: 0px;
-  left: 2.5%;
+  left: 35px;
 }
 
 .brand-group > * {
@@ -160,14 +148,13 @@ html {
 /* --- DISREGARD ALL SYMBOL-SPECIFIC SPACING --- */
 .brand-group .symbol-class {
   align-self: center;
-  justify-self: start;
   font-size: 6.4rem;
 
   /* CRITICAL LOCKS: Strips the element of physical width or margin footprints */
-  margin: 0 !important; /* Destroys any browser default or injected margins */
-  padding: 0 !important; /* Destroys any browser default padding */
-  width: 0px !important; /* Forces layout footprint to absolute zero */
-  height: 0px !important;
+  margin: 0; /* Destroys any browser default or injected margins */
+  padding: 0; /* Destroys any browser default padding */
+  width: 0px; /* Forces layout footprint to absolute zero */
+  height: 0px;
   display: inline-flex; /* Normalizes rendering behavior */
   align-items: center;
   justify-content: center;
@@ -178,10 +165,9 @@ html {
 /* --- THE LOCK: ABSOLUTE TEXT PLACEMENT --- */
 .brand-group .text-wrapper-class {
   align-self: center;
-  justify-self: start;
 
   /* 
-    This margin calculates the distance directly from the absolute left border of your .brand-box-container. */
+      This margin calculates the distance directly from the absolute left border of your .brand-box-container. */
   margin-left: 40px;
   margin-bottom: 25px;
 
@@ -196,8 +182,8 @@ html {
 }
 
 /* ==========================================================================
-       3. Navigation Track & Buttons
- ========================================================================== */
+         3. Navigation Track & Buttons
+   ========================================================================== */
 
 /* Centered Navigation Bar Panel with White Glass Background */
 .nav-buttons-anchored {
@@ -325,8 +311,8 @@ html {
 }
 
 /* ==========================================================================
-       4. Right Side Buttons (Original Separate Custom Sizes)
-       ========================================================================== */
+         4. Right Side Buttons (Original Separate Custom Sizes)
+         ========================================================================== */
 .bible-btn {
   background-image: url("https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/photo-1450558415837-1f5e21a17709.avif");
   background-size: cover;
@@ -374,21 +360,20 @@ html {
 }
 
 /* ==========================================================================
-       5. Content Cards & Scaling
-       ========================================================================== */
+         5. Content Cards & Scaling
+         ========================================================================== */
 .card {
   width: 100%;
   max-width: 800px;
   display: block;
   padding: 0 20px;
   background-color: rgba(255, 255, 255, 0.85);
-  padding: 30px;
   border-radius: 8px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
 }
 
-.card img.responsive-img {
+.card img .responsive-img {
   width: calc(100% + 40px);
   max-width: none;
   margin-left: -20px;
@@ -399,7 +384,7 @@ html {
 
 /* PAGE SPECIFIC BACKGROUND IMAGES */
 /* Index/Home Page Background */
-body.index-b-page {
+body .index-b-page {
   background-image: url("https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/20180610_144339_1F39E90D-0541-4893-8704-A8CA6835F2B8.jpg");
   background-attachment: fixed;
   background-size: cover;
@@ -407,7 +392,7 @@ body.index-b-page {
   background-repeat: no-repeat;
 }
 /* Camping Page Background */
-body.camping-b-page {
+body .camping-b-page {
   background-image: url("https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/image_ca4cc3a2.jpg");
   background-attachment: fixed;
   background-size: cover;
@@ -415,7 +400,7 @@ body.camping-b-page {
   background-repeat: no-repeat;
 }
 /* Fishing Page Background */
-body.fishing-b-page {
+body .fishing-b-page {
   background-image: url("https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/20170120_161301_IMG_0992.jpg");
   background-attachment: fixed;
   background-size: cover;
@@ -423,7 +408,7 @@ body.fishing-b-page {
   background-repeat: no-repeat;
 }
 /* Bible Page Background */
-body.bible-b-page {
+body .bible-b-page {
   background-image: url("https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/photo-1450558415837-1f5e21a17709.avif");
   background-attachment: fixed;
   background-size: cover;
