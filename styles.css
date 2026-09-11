@@ -131,7 +131,7 @@ html {
 
 .header-container h1 {
   font-family: "Merriweather", serif;
-  translate: 0px 0px;
+  translate: 0px -3px;
   font-size: 2.8rem;
   line-height: 0.9;
   text-align: left;
@@ -140,8 +140,8 @@ html {
 }
 .header-container p {
   font-family: "Merriweather", serif;
-  translate: 0px -6.5px;
-  font-size: 6.6rem;
+  translate: 0px -2px;
+  font-size: 6.3rem;
   text-align: left;
   color: #000000;
   box-sizing: border-box;
