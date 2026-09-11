@@ -3,6 +3,63 @@
 *::after {
   box-sizing: border-box !important;
 }
+
+/* ==========================================================================
+       Global Loading Screen Overlay
+   ========================================================================== */
+#loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000000; /* Matches your navbar theme */
+  z-index: 100000; /* Sits above everything, including your nav bar */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  transition: opacity 0.4s ease-out, visibility 0.4s ease-out;
+  visibility: visible;
+}
+
+/* Class added by JavaScript to smoothly slide the curtain away */
+#loading-overlay.fade-out {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.loader-content {
+  text-align: center;
+  color: #ffffff;
+  font-family: "Merriweather", serif;
+}
+
+/* Spinning symbol effect */
+.loader-symbol {
+  font-size: 60px;
+  margin-bottom: 15px;
+  display: inline-block;
+  animation: spin 2s linear infinite;
+}
+
+.loader-text {
+  font-size: 18px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+/* Keyframes for the rotation loop */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 /* ==========================================================================
   1. Global Page Layout
   ========================================================================== */
