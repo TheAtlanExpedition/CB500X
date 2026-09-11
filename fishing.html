@@ -19,6 +19,13 @@
     <link rel="stylesheet" type="text/css" href="./styles.css" />
   </head>
   <body class="fishing-b-page">
+    <!-- Full-Page Loading Curtain -->
+    <div id="loading-overlay">
+      <div class="loader-content">
+        <div class="loader-symbol">&#10008;</div>
+        <p class="loader-text">Loading Expedition...</p>
+      </div>
+    </div>
     <div class="header-container fishing-h-page">
       <div class="flex-container">
         <!-- 1. Left Side Group -->
@@ -83,5 +90,13 @@
         <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />✟
       </p>
     </section>
+    <script>
+      window.addEventListener("load", function () {
+        const overlay = document.getElementById("loading-overlay");
+        if (overlay) {
+          overlay.classList.add("fade-out");
+        }
+      });
+    </script>
   </body>
 </html>
