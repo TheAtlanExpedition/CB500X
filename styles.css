@@ -325,7 +325,7 @@ html {
   content: "";
   position: absolute;
   top: -1px;
-  left: -25px; /* Snaps flush against the left side of the panel */
+  left: -24px; /* Snaps flush against the left side of the panel */
   width: 25px;
   height: 25px;
   background: transparent;
