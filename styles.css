@@ -137,9 +137,10 @@ html {
   content: "";
   display: block;
   position: absolute;
+  top: -5px;
   left: 0;
   width: 100%;
-  height: 10px;
+  height: 30px;
   background-color: #000000;
   margin-top: 105px;
 }
@@ -254,52 +255,93 @@ html {
 /* ==========================================================================
        3. Navigation Track & Buttons
  ========================================================================== */
-/* Centered Navigation Bar Panel with Black Glass Background - STACKED */
-.nav-buttons-anchored {
-  position: absolute;
-  top: 256px;
-  left: 93px;
-  transform: translateX(-50%);
-  z-index: 9999;
-
-  /* --- CHANGED FOR VERTICAL STACKING --- */
-  width: auto; /* Lets the width fit the 150px buttons cleanly */
-  height: auto; /* Prevents the 50px limit from smashing the stack */
-  padding: 20px 20px; /* Balanced padding around the vertical group */
-  box-sizing: border-box;
-
-  /* Flexbox Settings changed to vertical column layout */
-  display: flex;
-  flex-direction: column; /* FORCES BUTTONS ONE ABOVE THE OTHER */
-  align-items: center;
-  justify-content: center;
-  gap: 15px; /* Increased spacing between stacked buttons */
-  white-space: nowrap;
-  background-color: #000000;
-  border-radius: 0 0 12px 12px;
+/* --- 1. THE VIEWPORT ANCHOR (Pins the menu system to the right edge) --- */
+.menu-fixed-anchor {
+  position: fixed;
+  top: 100px; /* Matches the bottom edge height of your header */
+  right: 40px; /* Safety margin so it never cuts off screen edge */
+  z-index: 10000;
 }
 
-/*  SMOOTH CURVED FLARES (Updated to match vertical box dimensions) */
+/* --- 2. THE LOCAL RELATIVE ANCHOR --- */
+.menu-container {
+  position: relative;
+  display: inline-block;
+}
 
-/* Right side outward curve */
+/* --- 3. THE STATIONARY TAB BUTTON --- */
+.nav-toggle-tab {
+  display: inline-block;
+  background-color: #000000;
+  color: #ffffff;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  transform: scaleX(2.3); /* Forces the text/button to stretch extra wide */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 10002; /* Kept highest to stack cleanly over the dropdown background */
+}
+
+/* --- 4. THE HIDDEN CHECKBOX CONTROL --- */
+.nav-toggle-check {
+  display: none;
+}
+
+/* --- 5. THE VERTICAL DROPDOWN PANEL --- */
+.nav-buttons-anchored {
+  position: absolute;
+  top: 30px; /* Spawns exactly at the bottom edge of the Menu button */
+  right: -40px; /* Aligns dropdown flush to the right so it stays on-screen */
+
+  transform: translateY(-20px);
+  opacity: 0;
+  visibility: hidden;
+  z-index: 10001;
+
+  width: auto;
+  height: auto;
+  padding: 15px 5px;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  white-space: nowrap;
+  background-color: #000000;
+
+  /* FIX: Top-left corner is set to 0 to seamlessly catch the new curve flare */
+  border-radius: 0 0px 12px 12px;
+
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+}
+
+/* --- 6. SMOOTH CURVED FLARE (Top-Left Connection) --- */
 .nav-buttons-anchored::after {
   content: "";
   position: absolute;
-  top: 0px;
-  right: -24px;
+  top: -1px;
+  left: -25px; /* Snaps flush against the left side of the panel */
   width: 25px;
-  height: 25px; /* Square format matches corner transition better */
+  height: 25px;
   background: transparent;
-  border-top-left-radius: 25px;
-  box-shadow: -8px -8px 0 0 #000000;
+  border-top-right-radius: 25px; /* Creates the beautiful outward curvature scoop */
+  box-shadow: 8px -8px 0 0 #000000; /* Fills the shape with matching solid black */
   z-index: -1;
   pointer-events: none;
 }
-.nav-btns {
-  position: fixed;
-  left: 20px;
-  top: 20px;
+
+/* --- 7. OPEN DEPLOYMENT LOGIC --- */
+.nav-toggle-check:checked ~ .nav-buttons-anchored {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0); /* Drops down smoothly into place when clicked */
 }
+
 /* --- INDIVIDUAL NAV BTNS --- */
 .nav-btn-home {
   background-image: url("https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/20260704_111639.jpg");
@@ -429,15 +471,16 @@ html {
        5. Content Cards & Scaling
        ========================================================================== */
 .card {
-  /* FIX: Tells the card to scale dynamically but leave a 260px gap on the left for your nav */
-  width: calc(100% - 260px);
-  max-width: 650px;
+  width: 100%;
+  max-width: 1000px;
   display: block;
   padding: 0px 20px;
   background-color: rgba(255, 255, 255, 0.85);
-  margin-left: auto; /* Keeps it weighted to the right */
-  /* FIX: Pushes the card away from the right edge by 40px */
-  margin-right: 60px;
+
+  /* FIX: Clean centering on the screen since nav is tucked away */
+  margin-left: auto;
+  margin-right: auto;
+
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
