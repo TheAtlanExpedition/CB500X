@@ -315,7 +315,7 @@ html {
   background-color: #000000;
 
   /* FIX: Top-left corner is set to 0 to seamlessly catch the new curve flare */
-  border-radius: 0 0px 12px 12px;
+  border-radius: 0 0px 8px 8px;
 
   transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
 }
