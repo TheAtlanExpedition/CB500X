@@ -259,7 +259,7 @@ html {
 .menu-fixed-anchor {
   position: fixed;
   top: 100px; /* Matches the bottom edge height of your header */
-  right: 40px; /* Safety margin so it never cuts off screen edge */
+  right: 41px; /* Safety margin so it never cuts off screen edge */
   z-index: 10000;
 }
 
