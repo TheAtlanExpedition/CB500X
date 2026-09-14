@@ -31,19 +31,51 @@
       <div class="flex-container">
         <!-- 1. Left Side Group -->
         <div class="brand-group">
-          <p class="symbol-class">&#9736;</p>
+          <p class="symbol-class">☈</p>
           <h1 class="text-wrapper-class">Camping<br />Expedition</h1>
         </div>
-        <!-- 2. Middle Button Bar -->
-        <div class="nav-buttons-anchored">
-          <a href="index.html" style="text-decoration: none;"><button style="cursor: pointer; font-size:30px;"class="nav-btn-home">Home</button></a>
-          <a href="camping.html" style="text-decoration: none;"><button style="cursor: pointer; font-size:30px;"class="nav-btn-camping">Camping</button></a>
-          <a href="fishing.html" style="text-decoration: none;"><button style="cursor: pointer; font-size:30px;"class="nav-btn-fishing">Fishing</button></a>
-        </div>  
+
+        <!-- 2. Middle Button Bar (Now converted into the hidden drawer) -->
+        <div class="menu-fixed-anchor">
+          <div class="menu-container">
+            <input type="checkbox" id="nav-toggle" class="nav-toggle-check" />
+
+            <label for="nav-toggle" class="nav-toggle-tab">
+              <span>&#9776;</span>
+            </label>
+
+            <div class="nav-buttons-anchored">
+              <a href="index.html" style="text-decoration: none"
+                ><button
+                  style="cursor: pointer; font-size: 30px"
+                  class="nav-btn-home"
+                >
+                  Home
+                </button></a
+              >
+              <a href="camping.html" style="text-decoration: none"
+                ><button
+                  style="cursor: pointer; font-size: 30px"
+                  class="nav-btn-camping"
+                >
+                  Camping
+                </button></a
+              >
+              <a href="fishing.html" style="text-decoration: none"
+                ><button
+                  style="cursor: pointer; font-size: 30px"
+                  class="nav-btn-fishing"
+                >
+                  Fishing
+                </button></a
+              >
+            </div>
+          </div>
+        </div>
         <!-- 3. Right Side Group -->
         <div class="right-menu">
-          <a href="bible.html"
-            ><button style="cursor: pointer" class="bible-btn"></button>
+          <a href="bible.html">
+            <button style="cursor: pointer" class="bible-btn"></button>
           </a>
         </div>
       </div>
@@ -56,10 +88,10 @@
       </p>
     </section>
     <script>
-      window.addEventListener('load', function () {
-        const overlay = document.getElementById('loading-overlay');
+      window.addEventListener("load", function () {
+        const overlay = document.getElementById("loading-overlay");
         if (overlay) {
-          overlay.classList.add('fade-out');
+          overlay.classList.add("fade-out");
         }
       });
     </script>
