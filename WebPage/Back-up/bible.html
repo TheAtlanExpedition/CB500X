@@ -1,0 +1,57 @@
+<!-- 14/09/26 -->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bible Expedition</title>
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://googleapis.com" />
+    <link rel="preconnect" href="https://gstatic.com" crossorigin />
+    <link href="https://googleapis.com/css2?family=Handlee&family=Merriweather:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
+   
+    <!-- EXTERNAL STYLESHEET -->
+    <link rel="stylesheet" type="text/css" href="./styles.css">
+</head>
+<body class="bible-b-page">
+  <!-- Full-Page Loading Curtain -->
+<div id="loading-overlay">
+  <div class="loader-content">
+    <div class="loader-symbol">&#10008;</div>
+    <p class="loader-text">Loading Expedition...</p>
+  </div>
+</div>
+  <div class="header-container bible-h-page">
+    <div class="flex-container">
+      <!-- 1. Left Side Group -->
+      <div class="brand-group" style="margin-right:7px">
+        <p class="symbol-class">✟</p>
+        <h1 class="text-wrapper-class">Bible<br>Expedition</h1>
+      </div>
+      <!-- 2. Middle Button Bar -->
+      <div class="nav-buttons-anchored">
+        <a href="index.html" style="text-decoration: none;"><button style="cursor: pointer; font-size:30px;"class="nav-btn-home">Home</button></a>
+        <a href="camping.html" style="text-decoration: none;"><button style="cursor: pointer; font-size:30px;"class="nav-btn-camping">Camping</button></a>
+        <a href="fishing.html" style="text-decoration: none;"><button style="cursor: pointer; font-size:30px;"class="nav-btn-fishing">Fishing</button></a>
+      </div>   
+      </section>    
+      <!-- 3. Right Side Group (Uses Church Button) -->
+      <div class="right-menu">
+        <a href="https://www.seelifebaptistchurch.org.au/"><button style="cursor: pointer;" class="church-btn"></button></a>
+      </div>
+    </div>
+  </div>
+  <section class="card" style="text-align:center">
+    <h4 style="font-size: 40px; text-decoration: underline;">1 Corinthinans 10:31</h4>
+    <p>"Whether therefore ye eat, or drink, or whatsoever ye do, do all to the glory of God."</p>
+  </secion>
+  <script>
+    window.addEventListener('load', function () {
+      const overlay = document.getElementById('loading-overlay');
+      if (overlay) {
+        overlay.classList.add('fade-out');
+      }
+    });
+  </script>
+</body>
+</html>
