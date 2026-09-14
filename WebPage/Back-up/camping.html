@@ -1,0 +1,69 @@
+<!-- 14/09/26 -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Camping Expedition</title>
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://googleapis.com" />
+    <link rel="preconnect" href="https://gstatic.com" crossorigin />
+    <link
+      href="https://googleapis.com/css2?family=Handlee&family=Merriweather:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Handlee&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- EXTERNAL STYLESHEET -->
+    <link rel="stylesheet" type="text/css" href="./styles.css" />
+  </head>
+  <!--  ✟  ☷ -->
+  <body class="camping-b-page">
+    <!-- Full-Page Loading Curtain -->
+    <div id="loading-overlay">
+      <div class="loader-content">
+        <div class="loader-symbol">✟</div>
+        <p class="loader-text">Loading Expedition...</p>
+      </div>
+    </div>
+    <div class="header-container camping-h-page">
+      <div class="flex-container">
+        <!-- 1. Left Side Group -->
+        <div class="brand-group">
+          <p class="symbol-class">&#9736;</p>
+          <h1 class="text-wrapper-class">Camping<br />Expedition</h1>
+        </div>
+        <!-- 2. Middle Button Bar -->
+        <div class="nav-buttons-anchored">
+          <a href="index.html" style="text-decoration: none;"><button style="cursor: pointer; font-size:30px;"class="nav-btn-home">Home</button></a>
+          <a href="camping.html" style="text-decoration: none;"><button style="cursor: pointer; font-size:30px;"class="nav-btn-camping">Camping</button></a>
+          <a href="fishing.html" style="text-decoration: none;"><button style="cursor: pointer; font-size:30px;"class="nav-btn-fishing">Fishing</button></a>
+        </div>  
+        <!-- 3. Right Side Group -->
+        <div class="right-menu">
+          <a href="bible.html"
+            ><button style="cursor: pointer" class="bible-btn"></button>
+          </a>
+        </div>
+      </div>
+    </div>
+    <section class="card">
+      <p style="font-size: 100px; text-align: center">
+        COMING SOON<br />W.I.P
+
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />✟
+      </p>
+    </section>
+    <script>
+      window.addEventListener('load', function () {
+        const overlay = document.getElementById('loading-overlay');
+        if (overlay) {
+          overlay.classList.add('fade-out');
+        }
+      });
+    </script>
+  </body>
+</html>
