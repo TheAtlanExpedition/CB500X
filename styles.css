@@ -541,13 +541,13 @@ html {
 }
 
 .card img.responsive-img {
-  width: calc(100% + 40px);
+  width: 100%;
   max-width: none;
-  margin-left: -20px;
   height: auto;
   display: block;
   margin-top: 15px;
 }
+
 
 /* PAGE SPECIFIC BACKGROUND IMAGES */
 /* Index/Home Page Background */
