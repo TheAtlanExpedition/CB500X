@@ -73,7 +73,10 @@ align-items: right;
 box-sizing: border-box;
 background-color: #f5f5f5;
 }
-
+.centered-text {
+  display: block;
+  text-align: center;
+}
 /* ==========================================================================
 Font Families
 ========================================================================== */
