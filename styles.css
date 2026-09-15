@@ -526,7 +526,7 @@ transform: scale(1.15);
       ========================================================================== */
 
 .card {
-width: 100%;
+width: calc(100% - 40px);
 max-width: 1000px;
 min-width: 900px;
 display: block;
@@ -541,9 +541,8 @@ padding: 20px;
 }
 
 .card img.responsive-img {
-  width: calc(100% + 40px);
+width: 100%;
 max-width: none;
-  margin-left: -20px;
 height: auto;
 display: block;
 margin-top: 15px;
