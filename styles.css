@@ -526,7 +526,7 @@ transform: scale(1.15);
       ========================================================================== */
 
 .card {
-width: calc(100% - 40px);
+width: 100%;
 max-width: 1000px;
 min-width: 900px;
 display: block;
