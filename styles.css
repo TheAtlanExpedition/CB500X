@@ -507,14 +507,22 @@ transform: scale(1.15);
   font-weight: bold;
   font-size: 16px;
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+
   width: 130px;
   height: 40px;
   box-sizing: border-box;
+
   border: 2px solid #00a1dd;
   border-radius: 8px;
   cursor: pointer;
-  transition: transform 0.2s ease;
+
   transform: translate(30px, 20px);
+  transition: transform 0.2s ease;
+}
+
+.church-btn:hover {
+  opacity: 0.9;
+  transform: translate(30px, 20px) scale(1.15);
 }
 
 /* ==========================================================================
