@@ -499,28 +499,23 @@ transform: scale(1.15);
 }
 
 .church-btn {
-background-image: url("https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/logo.png");
-background-size: cover;
-background-position: center;
-background-repeat: no-repeat;
-color: white;
-font-weight: bold;
-font-size: 16px;
-text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
-width: 150px;
-height: 30px;
-box-sizing: border-box;
-padding-bottom: 40px;
-border: 2px solid #00a1dd;
-border-radius: 8px;
-cursor: pointer;
-transition: transform 0.2s ease;
+  background-image: url("https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/logo.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+  width: 130px;
+  height: 40px;
+  box-sizing: border-box;
+  border: 2px solid #00a1dd;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  transform: translate(30px, 20px);
 }
-.church-btn:hover {
-opacity: 0.9;
-transform: scale(1.15);
-}
-
 
 /* ==========================================================================
    5. CONTENT CARDS, TEXT SCALING, AND MOBILE WRAPPING
