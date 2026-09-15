@@ -1,677 +1,557 @@
-/* ==========================================================================
-   GLOBAL BOX SIZING
-   ========================================================================== */
-
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+  box-sizing: border-box !important;
 }
-
 
 /* ==========================================================================
-   MOBILE TEXT HANDLING
-   ========================================================================== */
-
-html {
-  -webkit-text-size-adjust: 100%;
-  text-size-adjust: 100%;
+       Global Loading Screen Overlay
+  ========================================================================== */
+#loading-overlay {
+position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000000; /* Matches your navbar theme */
+  z-index: 100000; /* Sits above everything, including your nav bar */
+display: flex;
+  justify-content: center;
+align-items: center;
+opacity: 1;
+  transition: opacity 0.4s ease-out, visibility 0.4s ease-out;
+visibility: visible;
 }
 
+/* Class added by JavaScript to smoothly slide the curtain away */
+#loading-overlay.fade-out {
+opacity: 0;
+visibility: hidden;
+}
+
+.loader-content {
+text-align: center;
+  color: #ffffff;
+font-family: "Merriweather", serif;
+}
+
+/* Spinning symbol effect */
+.loader-symbol {
+  font-size: 60px;
+  margin-bottom: 15px;
+display: inline-block;
+animation: spin 2s linear infinite;
+}
+
+.loader-text {
+font-size: 18px;
+letter-spacing: 2px;
+text-transform: uppercase;
+  margin: 0;
+}
+
+/* Keyframes for the rotation loop */
+@keyframes spin {
+  0% {
+transform: rotate(0deg);
+}
+  100% {
+transform: rotate(360deg);
+}
+}
+
+/* ==========================================================================
+  1. Global Page Layout
+  ========================================================================== */
 body {
   margin: 0;
-  padding: 0 0 20px;
+  padding: 0 0 20px 0;
   min-height: 100vh;
-  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: right;
+  box-sizing: border-box;
   background-color: #f5f5f5;
 }
 
-
 /* ==========================================================================
-   FONTS
-   ========================================================================== */
+ Font Families
+ ========================================================================== */
+/* 1. Large Cursive Titles (Matching your original h2 and h3 rules) */
+h2,
+h3,
+.handlee-regular {
+  font-family: "Handlee", cursive !important;
+  font-weight: 400;
+  font-style: normal;
+}
 
+/* 2. Standard Cursive Body Text (Matching your original p, h4, and figcaption rules) */
 body,
 html,
 p,
 span,
 a,
-h2,
-h3,
-h4,
 button,
 .handlee-regular {
-  font-family: "Handlee", cursive;
+  font-family: "Handlee", cursive !important;
   font-weight: 400;
   font-style: normal;
 }
 
+/* 3. Large Serif Title (Matching your original h1 rule) */
 h1 {
-  font-family: "Merriweather", Georgia, serif;
+  font-family: "Merriweather", Georgia, serif !important;
+}
+/* Add this below your font definitions to enforce strict selection mapping */
+*,
+*::before,
+*::after {
+  font-family: inherit;
 }
 
-h2,
-h3,
-.handlee-regular {
+body,
+html {
+  font-family: "Merriweather", sans-serif;
   font-family: "Handlee", cursive;
 }
 
-
 /* ==========================================================================
-   LOADING SCREEN
-   ========================================================================== */
-
-#loading-overlay {
-  position: fixed;
-  inset: 0;
-  z-index: 100000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100vw;
-  height: 100vh;
-  background-color: #000;
-  opacity: 1;
-  visibility: visible;
-  transition:
-    opacity 0.4s ease-out,
-    visibility 0.4s ease-out;
-}
-
-#loading-overlay.fade-out {
-  opacity: 0;
-  visibility: hidden;
-}
-
-.loader-content {
-  color: #fff;
-  text-align: center;
-  font-family: "Merriweather", serif;
-}
-
-.loader-symbol {
-  display: inline-block;
-  margin-bottom: 15px;
-  font-size: 60px;
-  animation: spin 2s linear infinite;
-}
-
-.loader-text {
-  margin: 0;
-  font-size: 18px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-
-/* ==========================================================================
-   DESKTOP PAGE LAYOUT
-   These minimum widths remain active on desktop screens.
-   ========================================================================== */
-
+       2. Header Base Structure
+       ========================================================================== */
 .header-container {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+position: sticky;
+top: 0;
+z-index: 1000;
   width: 100%;
   min-width: 950px;
   height: 100px;
-  margin: 0 0 100px;
-  background-color: #000;
+  margin: 0 0 100px 0;
+display: flex;
+align-items: center;
+justify-content: center;
+  box-sizing: border-box;
+
+  /* 🎨 Forces everything past the 1900px asset limit to blend into absolute black background panels */
+  background-color: #000000;
 }
 
 .header-container::after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 0;
+content: "";
   display: block;
-  width: 100%;
-  height: 30px;
-  background-color: #000;
+position: absolute;
+  top: -5px;
+left: 0;
+width: 100%;
+height: 30px;
+  background-color: #000000;
+  margin-top: 105px;
 }
 
+/* PAGE SPECIFIC HEADER BACKGROUND IMAGES */
+/* --- 3. THE INTERMEDIARY BACKGROUND ENGINE LAYERING --- */
 .header-background-layer {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
+position: absolute;
+top: 0;
+  left: 100;
+width: 100%;
+height: 100%;
   display: flex;
-  justify-content: flex-end;
-  width: 100%;
-  height: 100%;
+  justify-content: flex-end; /* Keeps the middle image perfectly centered with the text content wrapper */
+  z-index: 1;
 }
 
+/* Both left and right blocks stretch horizontally to completely fill all window scale variables past 1900px */
 .side-bg-box {
-  flex: 1;
-  height: 100%;
-  background-color: transparent;
+flex: 1;
+height: 100%;
+  background-color: #0000;
 }
 
+/* --- THE CENTER IMAGE (Now size-locked with zero responsive scaling to freeze text/mask positions) --- */
 .center-bg-image {
-  flex-shrink: 0;
-  width: 100%;
-  min-width: 950px;
+  /* 🛑 THE LOCK: Match this exactly with your max-width content container to freeze alignment proportions */
+width: 100%;
   max-width: 1900px;
-  height: 100%;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
+min-width: 950px;
+height: 100%;
+  flex-shrink: 0; /* Absolutely forbids window scaling from compressing your layout mapping dimensions */
 
-  -webkit-mask-image: url("https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/Header_Background_Black(2.0).png");
-  mask-image: url("https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/Header_Background_Black(2.0).png");
+  /* Center alignment coordinates across all display variables */
+background-position: center center;
+background-repeat: no-repeat;
+  background-size: cover; /* Conforms your landscape asset nicely inside the frame */
 
-  -webkit-mask-mode: luminance;
-  mask-mode: luminance;
+  /* 🔄 THE IMAGE MASK ENG: Handles standard luminance mask coordinates perfectly across layout viewports */
+-webkit-mask-image: url("https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/Header_Background_Black(2.0).png");
+mask-image: url("https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/Header_Background_Black(2.0).png");
 
-  -webkit-mask-size: 100% 100%;
-  mask-size: 100% 100%;
+@@ -191,364 +179,434 @@ html {
 
-  -webkit-mask-position: center;
-  mask-position: center;
-
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
+-webkit-mask-size: 100% 100%;
+mask-size: 100% 100%;
+  -webkit-mask-position: center center;
+  mask-position: center center;
+-webkit-mask-repeat: no-repeat;
+mask-repeat: no-repeat;
 }
 
 .index-h-page .center-bg-image {
-  background-image:
-    linear-gradient(
-      rgba(255, 255, 255, 0.2),
-      rgba(255, 255, 255, 0.2)
-    ),
-    url("https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/20260704_111639.jpg");
+  background-image: linear-gradient(
+rgba(255, 255, 255, 0.2),
+rgba(255, 255, 255, 0.2)
+),
+url("https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/20260704_111639.jpg");
 }
 
 .camping-h-page .center-bg-image {
-  background-image:
-    linear-gradient(
-      rgba(255, 255, 255, 0.2),
-      rgba(255, 255, 255, 0.2)
-    ),
-    url("https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/image_ca4cc3a2.jpg");
+  background-image: linear-gradient(
+rgba(255, 255, 255, 0.2),
+rgba(255, 255, 255, 0.2)
+),
+url("https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/image_ca4cc3a2.jpg");
 }
 
 .fishing-h-page .center-bg-image {
-  background-image:
-    linear-gradient(
-      rgba(255, 255, 255, 0.2),
-      rgba(255, 255, 255, 0.2)
-    ),
-    url("https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/20170120_161301_IMG_0992.jpg");
+  background-image: linear-gradient(
+rgba(255, 255, 255, 0.2),
+rgba(255, 255, 255, 0.2)
+),
+url("https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/20170120_161301_IMG_0992.jpg");
 }
 
 .bible-h-page .center-bg-image {
-  background-image:
-    linear-gradient(
-      rgba(255, 255, 255, 0.2),
-      rgba(255, 255, 255, 0.2)
-    ),
-    url("https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/the-holy-bible-with-sun-beam-website-header.jpg");
+  background-image: linear-gradient(
+rgba(255, 255, 255, 0.2),
+rgba(255, 255, 255, 0.2)
+),
+url("https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/the-holy-bible-with-sun-beam-website-header.jpg");
 }
 
+/* --- Title Panel Frame Setup --- */
 .flex-container {
+display: flex;
+align-items: center;
+justify-content: space-between;
+width: 100%;
+max-width: 1900px;
+  margin: 0 auto; /* Safely anchors your layout space to stay aligned with the fixed mask dimensions */
+  padding: 0 40px; /* Gives some clean breathing space inside the black framing wings */
+  box-sizing: border-box;
   position: relative;
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  max-width: 1900px;
-  height: 100px;
-  margin: 0 auto;
-  padding: 0 40px;
+height: 100px;
+  z-index: 2; /* Keeps text and buttons above background image layers */
 }
 
+/* Clear transparent style properties allow text elements to stay nested inside the black zone natively */
 .brand-box-container {
-  display: inline-block;
+display: inline-block;
+background: transparent;
+  border: none;
+box-shadow: none;
+  backdrop-filter: none;
   padding: 0;
-  background: transparent;
-  border: 0;
-  box-shadow: none;
+  box-sizing: border-box;
 }
 
+/* Text grid stack isolated cleanly inside the wrapper panel */
 .brand-group {
+display: grid;
+grid-template-areas: "stack";
   position: relative;
-  display: grid;
-  grid-template-areas: "stack";
+  bottom: 0px;
+  left: 0px; /* Reset old layout shifts to follow flex container guidelines */
 }
 
 .brand-group > * {
-  grid-area: stack;
+grid-area: stack;
 }
 
+/* --- DISREGARD ALL SYMBOL-SPECIFIC SPACING --- */
 .brand-group .symbol-class {
-  align-self: center;
-  justify-self: start;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 0;
-  height: 0;
-  margin: 0;
-  padding: 0;
-  overflow: visible;
-  color: #4c5c39;
+align-self: center;
+justify-self: start;
   font-size: 6.4rem;
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 0px !important;
+  height: 0px !important;
+  transform: translate(0px, 12px);
+display: inline-flex;
+align-items: center;
+justify-content: center;
   white-space: nowrap;
-  text-shadow:
-    -0.5px -0.5px 0 #52a12b,
-     0.5px -0.5px 0 #52a12b,
-    -0.5px  0.5px 0 #52a12b,
-     0.5px  0.5px 0 #52a12b;
-  transform: translateY(12px);
+overflow: visible;
+  text-shadow: -0.5px -0.5px 0 #52a12b, 0.5px -0.5px 0 #52a12b,
+    -0.5px 0.5px 0 #52a12b, 0.5px 0.5px 0 #52a12b;
+color: #4c5c39;
 }
 
+/* --- THE LOCK: ABSOLUTE TEXT PLACEMENT --- */
 .brand-group .text-wrapper-class {
-  align-self: center;
-  justify-self: start;
-  margin-left: 45px;
+align-self: center;
+justify-self: start;
+  margin-left: 45px; /* Safely creates space for your ☈ symbol graphic footprint */
+  margin-bottom: 0px; /* Balanced layout positioning alignment inside the 100px bar */
+font-family: "Merriweather", serif;
+  transform: translate(0px, -3px);
+font-size: 2.8rem;
+line-height: 0.9;
+text-align: left;
+  text-shadow: -0.5px -0.5px 0 #52a12b, 0.5px -0.5px 0 #52a12b,
+    -0.5px 0.5px 0 #52a12b, 0.5px 0.5px 0 #52a12b;
   color: #4c5c39;
-  font-family: "Merriweather", serif;
-  font-size: 2.8rem;
-  line-height: 0.9;
-  text-align: left;
-  text-shadow:
-    -0.5px -0.5px 0 #52a12b,
-     0.5px -0.5px 0 #52a12b,
-    -0.5px  0.5px 0 #52a12b,
-     0.5px  0.5px 0 #52a12b;
-  transform: translateY(-3px);
+  box-sizing: border-box;
 }
-
 
 /* ==========================================================================
-   NAVIGATION
-   ========================================================================== */
-
+       3. Navigation Track & Buttons
+ ========================================================================== */
+/* --- 1. THE VIEWPORT ANCHOR (Pins the menu system to the right edge) --- */
 .menu-fixed-anchor {
-  position: absolute;
-  top: 100px;
-  right: 60px;
-  z-index: 10000;
+position: absolute;
+  top: 100px; /* Matches the bottom edge height of your header */
+  right: 60px; /* Safety margin so it never cuts off screen edge */
+z-index: 10000;
 }
 
+/* --- 2. THE LOCAL RELATIVE ANCHOR --- */
 .menu-container {
-  position: relative;
-  display: inline-block;
+position: relative;
+display: inline-block;
 }
 
+/* --- 3. THE STATIONARY TAB BUTTON --- */
 .nav-toggle-tab {
-  position: relative;
-  z-index: 10002;
-  display: inline-block;
-  color: #4c5c39;
-  background-color: #000;
-  border-radius: 8px;
-  cursor: pointer;
-  font-family: sans-serif;
-  font-size: 20px;
+display: inline-block;
+  background-color: #000000;
+color: #4c5c39;
+  text-shadow: -0.1px -0.1px 0 #52a12b, 0.1px -0.1px 0 #52a12b,
+    -0.1px 0.1px 0 #52a12b, 0.1px 0.1px 0 #52a12b;
+border-radius: 8px;
+cursor: pointer;
+font-family: sans-serif;
   font-weight: bold;
-  text-shadow:
-    -0.1px -0.1px 0 #52a12b,
-     0.1px -0.1px 0 #52a12b,
-    -0.1px  0.1px 0 #52a12b,
-     0.1px  0.1px 0 #52a12b;
-  transform: scaleX(2.3);
+font-size: 20px;
+  transform: scaleX(2.3); /* Forces the text/button to stretch extra wide */
+  position: relative;
+  z-index: 10002; /* Kept highest to stack cleanly over the dropdown background */
 }
 
+/* --- 4. THE HIDDEN CHECKBOX CONTROL --- */
 .nav-toggle-check {
-  display: none;
+display: none;
 }
 
+/* --- 5. THE VERTICAL DROPDOWN PANEL --- */
 .nav-buttons-anchored {
-  position: absolute;
-  top: 30px;
-  right: -40px;
-  z-index: 10001;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
+position: absolute;
+  top: 30px; /* Spawns exactly at the bottom edge of the Menu button */
+  right: -40px; /* Aligns dropdown flush to the right so it stays on-screen */
+
+  transform: translateY(-20px);
+  opacity: 0;
+  visibility: hidden;
+z-index: 10001;
+
   width: auto;
   height: auto;
   padding: 3px 5px;
-  overflow: visible;
-  background-color: #000;
-  border-radius: 0 0 8px 8px;
-  opacity: 0;
-  visibility: hidden;
-  white-space: nowrap;
-  transform: translateY(-20px);
-  transition:
-    opacity 0.3s ease,
-    transform 0.3s ease,
-    visibility 0.3s ease;
+  box-sizing: border-box;
+
+display: flex;
+  flex-direction: row;
+align-items: center;
+justify-content: center;
+gap: 5px;
+white-space: nowrap;
+  background-color: #000000;
+
+  /* FIX: Top-left corner is set to 0 to seamlessly catch the new curve flare */
+  border-radius: 0 0px 8px 8px;
+
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
 }
 
+/* --- 6. SMOOTH CURVED FLARE (Top-Left Connection) --- */
 .nav-buttons-anchored::after {
-  content: "";
-  position: absolute;
-  top: -1px;
-  left: -24px;
+content: "";
+position: absolute;
+top: -1px;
+  left: -24px; /* Snaps flush against the left side of the panel */
+width: 25px;
+height: 25px;
+background: transparent;
+  border-top-right-radius: 25px; /* Creates the beautiful outward curvature scoop */
+  box-shadow: 8px -8px 0 0 #000000; /* Fills the shape with matching solid black */
   z-index: -1;
-  width: 25px;
-  height: 25px;
-  background: transparent;
-  border-top-right-radius: 25px;
-  box-shadow: 8px -8px 0 #000;
-  pointer-events: none;
+pointer-events: none;
 }
 
+/* --- 7. OPEN DEPLOYMENT LOGIC --- */
 .nav-toggle-check:checked ~ .nav-buttons-anchored {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
+opacity: 1;
+visibility: visible;
+  transform: translateY(0); /* Drops down smoothly into place when clicked */
 }
 
-
-/* ==========================================================================
-   NAVIGATION BUTTONS
-   ========================================================================== */
-
-.nav-btn-home,
-.nav-btn-camping,
-.nav-btn-fishing {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 150px;
-  height: 40px;
-  color: #fff;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  border: 0;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: bold;
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
-  transition: transform 0.2s ease;
-}
-
+/* --- INDIVIDUAL NAV BTNS --- */
 .nav-btn-home {
   background-image: url("https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/20260704_111639.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+  width: 150px;
+  height: 40px; /* Adjusted height to prevent image cropping */
+  box-sizing: border-box;
+  display: flex; /* Centered button text cleanly inside card */
+align-items: center;
+justify-content: center;
+  border: none;
+border-radius: 8px;
+cursor: pointer;
+transition: transform 0.2s ease;
 }
-
-.nav-btn-camping {
-  background-image: url("https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/image_ca4cc3a2.jpg");
-}
-
-.nav-btn-fishing {
-  background-image: url("https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/20170120_161301_IMG_0992.jpg");
-}
-
-.nav-btn-home:hover,
-.nav-btn-camping:hover,
-.nav-btn-fishing:hover {
+.nav-btn-home:hover {
   opacity: 0.9;
   transform: scale(1.05);
 }
 
-.bible-btn,
-.church-btn {
-  color: #fff;
+.nav-btn-camping {
+background-image: url("https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/image_ca4cc3a2.jpg");
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+  width: 150px;
+  height: 40px; /* Adjusted height to prevent image cropping */
+  box-sizing: border-box;
+  display: flex; /* Centered button text cleanly inside card */
+  align-items: center;
+  justify-content: center;
+  border: none;
   border-radius: 8px;
   cursor: pointer;
-  font-size: 16px;
-  font-weight: bold;
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
   transition: transform 0.2s ease;
 }
-
-.bible-btn {
-  width: 60px;
-  height: 80px;
-  padding-bottom: 40px;
-  background-image: url("https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/photo-1450558415837-1f5e21a17709.avif");
-  border: 2px solid #000;
+.nav-btn-camping:hover {
+  opacity: 0.9;
+  transform: scale(1.05);
 }
 
-.church-btn {
+.nav-btn-fishing {
+background-image: url("https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/20170120_161301_IMG_0992.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
   width: 150px;
-  height: 30px;
-  padding-bottom: 40px;
-  background-image: url("https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/logo.png");
-  border: 2px solid #00a1dd;
+  height: 40px; /* Adjusted height to prevent image cropping */
+  box-sizing: border-box;
+  display: flex; /* Centered button text cleanly inside card */
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.nav-btn-fishing:hover {
+opacity: 0.9;
+transform: scale(1.05);
 }
 
-.bible-btn:hover,
-.church-btn:hover {
+/* ==========================================================================
+       4. Right Side Buttons (Original Separate Custom Sizes)
+       ========================================================================== */
+.bible-btn {
+  background-image: url("https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/photo-1450558415837-1f5e21a17709.avif");
+  background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+  color: white;
+  font-weight: bold;
+font-size: 16px;
+text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+width: 60px;
+height: 80px;
+  box-sizing: border-box;
+padding-bottom: 40px;
+  border: 2px solid #000000;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.bible-btn:hover {
   opacity: 0.9;
   transform: scale(1.15);
 }
 
+.church-btn {
+  background-image: url("https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/logo.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+width: 150px;
+height: 30px;
+  box-sizing: border-box;
+padding-bottom: 40px;
+border: 2px solid #00a1dd;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.church-btn:hover {
+opacity: 0.9;
+transform: scale(1.15);
+}
 
 /* ==========================================================================
-   CONTENT CARD
-   Desktop keeps the 900px minimum width.
-   ========================================================================== */
+       5. Content Cards & Scaling
+       ========================================================================== */
 
 .card {
-  display: block;
-  width: calc(100% - 40px);
-  min-width: 900px;
+width: calc(100% - 40px);
   max-width: 1000px;
-  margin-right: auto;
-  margin-left: auto;
-  padding: 20px;
-  overflow-wrap: break-word;
+min-width: 900px;
+  display: block;
+  padding: 20px 10px;
   background-color: rgba(255, 255, 255, 0.85);
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  -webkit-text-size-adjust: 100%;
-  text-size-adjust: 100%;
-}
-
-.card h2 {
-  margin-top: 0;
-  font-size: clamp(1.5rem, 1.25rem + 1.5vw, 2.25rem);
-  line-height: 1.2;
-}
-
-.card h3 {
-  font-size: clamp(1.25rem, 1.1rem + 1vw, 1.75rem);
-  line-height: 1.25;
-}
-
-.card h4 {
-  font-size: clamp(1.1rem, 1rem + 0.5vw, 1.4rem);
-  line-height: 1.3;
-}
-
-.card p {
-  margin-top: 0;
-  margin-bottom: 1rem;
-  font-size: clamp(1rem, 1rem + 0.4vw, 1.25rem);
-  line-height: 1.6;
+  margin-left: auto;
+margin-right: auto;
+border-radius: 12px;
+box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  padding: 20px;
 }
 
 .card img.responsive-img {
+width: 100%;
+  max-width: none;
+height: auto;
   display: block;
-  width: 100%;
-  max-width: 100%;
-  height: auto;
-  margin-top: 15px;
+margin-top: 15px;
 }
 
 
-/* ==========================================================================
-   MOBILE OVERRIDES
-   The desktop minimum widths are removed only on small screens.
-   ========================================================================== */
-
-@media (max-width: 700px) {
-  body {
-    width: 100%;
-    min-width: 0;
-    overflow-x: hidden;
-  }
-
-  .header-container {
-    width: 100%;
-    min-width: 0;
-    height: 80px;
-    margin-bottom: 60px;
-  }
-
-  .header-container::after {
-    height: 20px;
-  }
-
-  .header-background-layer {
-    width: 100%;
-  }
-
-  .center-bg-image {
-    width: 100%;
-    min-width: 0;
-  }
-
-  .flex-container {
-    width: 100%;
-    height: 80px;
-    padding: 0 16px;
-  }
-
-  .brand-group .symbol-class {
-    font-size: 4rem;
-    transform: translateY(8px);
-  }
-
-  .brand-group .text-wrapper-class {
-    margin-left: 35px;
-    font-size: clamp(1.5rem, 7vw, 2.8rem);
-  }
-
-  .menu-fixed-anchor {
-    top: 80px;
-    right: 16px;
-  }
-
-  .nav-toggle-tab {
-    transform: none;
-  }
-
-  .nav-buttons-anchored {
-    right: 0;
-    max-width: calc(100vw - 32px);
-    overflow-x: auto;
-  }
-
-  .card {
-    width: calc(100% - 32px);
-    min-width: 0;
-    max-width: none;
-    margin-right: 16px;
-    margin-left: 16px;
-    padding: clamp(16px, 4vw, 24px);
-  }
-
-  .card h2 {
-    font-size: clamp(1.5rem, 7vw, 2.25rem);
-  }
-
-  .card h3 {
-    font-size: clamp(1.25rem, 5.5vw, 1.75rem);
-  }
-
-  .card h4 {
-    font-size: clamp(1.1rem, 4.5vw, 1.4rem);
-  }
-
-  .card p {
-    font-size: clamp(1rem, 4vw, 1.25rem);
-    line-height: 1.6;
-  }
-
-  .card img.responsive-img {
-    width: 100%;
-    max-width: 100%;
-  }
-}
 /* PAGE SPECIFIC BACKGROUND IMAGES */
 /* Index/Home Page Background */
 body.index-b-page {
-  background-image: url("https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/20180610_144339_1F39E90D-0541-4893-8704-A8CA6835F2B8.jpg");
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center top;
-  background-repeat: no-repeat;
-}
-/* Camping Page Background */
-body.camping-b-page {
-  background-image: url("https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/image_ca4cc3a2.jpg");
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center top;
-  background-repeat: no-repeat;
-}
-/* Fishing Page Background */
-body.fishing-b-page {
-  background-image: url("https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/20170120_161301_IMG_0992.jpg");
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center top;
-  background-repeat: no-repeat;
-}
-/* Bible Page Background */
-body.bible-b-page {
-  background-image: url("https://raw.githubusercontent.com/TheAtlanExpedition/CB500X/refs/heads/main/Images/photo-1450558415837-1f5e21a17709.avif");
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center top;
-  background-repeat: no-repeat;
-}
-/* Restore the brand symbol/title relationship */
-.brand-group {
-  position: relative;
-  display: grid;
-  grid-template-areas: "brand";
-  align-items: center;
-}
-
-.brand-group > * {
-  grid-area: brand;
-}
-
-.brand-group .symbol-class {
-  position: relative;
-  z-index: 1;
-  justify-self: start;
-  width: 0;
-  height: 0;
-  margin: 0 !important;
-  padding: 0 !important;
-  transform: translate(0, 12px);
-}
-
-.brand-group .text-wrapper-class {
-  position: relative;
-  z-index: 2;
-  justify-self: start;
-  margin-left: 45px;
-  margin-bottom: 0;
-  transform: translate(0, -3px);
-  font-family: "Merriweather", Georgia, serif;
-  font-size: 2.8rem;
-  line-height: 0.9;
-  white-space: nowrap;
+@@ -582,3 +640,38 @@ body.bible-b-page {
+background-position: center top;
+background-repeat: no-repeat;
 }
