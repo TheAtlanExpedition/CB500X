@@ -528,7 +528,6 @@ transform: scale(1.15);
 .card {
 width: calc(100% - 40px);
 max-width: 1000px;
-min-width: 900px;
 display: block;
 padding: 20px 10px;
 background-color: rgba(255, 255, 255, 0.85);
